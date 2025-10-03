@@ -1,0 +1,30 @@
+{
+  "name": "domain-twitter-bot",
+  "version": "1.0.0",
+  "description": "Twitter bot for domain opportunities tracking and sharing",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node coxy-optimized-bot.mjs",
+    "start-old": "node index.mjs",
+    "dev": "node --watch coxy-optimized-bot.mjs",
+    "test": "node test-enhanced.mjs",
+    "test-old": "node test-bot.mjs",
+    "setup": "node setup-enhanced.mjs",
+    "setup-db": "node setup-database.mjs",
+    "migrate": "node migrate-schema.mjs",
+    "setup-old": "node setup-twitter-bot.mjs",
+    "setup-sql": "echo 'Please run the SQL in supabase-enhanced-schema.sql in your Supabase dashboard'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.3",
+    "twitter-api-v2": "^1.15.2",
+    "openai": "^4.28.0",
+    "dotenv": "^16.4.5",
+    "node-cron": "^3.0.3",
+    "axios": "^1.7.8"
+  },
+  "keywords": ["twitter", "bot", "domain", "opportunities", "ai"],
+  "author": "Iris Team",
+  "license": "MIT"
+}

@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Sen:wght@400..800&family=Fredoka:wght@300..600&family=Comic+Neue:wght@300;400;700&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&family=Orbitron:wght@400..900&family=Rajdhani:wght@300..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .nouns {
+    font-family: "Londrina Solid", serif;
+  }
+
+  .sen {
+    font-family: "Sen", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  /* Memecoin Font Styles */
+  .meme-title {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .meme-subtitle {
+    font-family: "Comic Neue", cursive;
+    font-weight: 400;
+  }
+
+  .meme-body {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+  }
+
+  .crypto-tech {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .crypto-futuristic {
+    font-family: "Orbitron", monospace;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .crypto-bold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .meme-playful {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 500;
+  }
+
+  .meme-comic {
+    font-family: "Comic Neue", cursive;
+    font-weight: 700;
+  }
+
+  /* Coxy Brand Color Utilities */
+  .coxy-primary {
+    color: hsl(var(--coxy-primary));
+  }
+  
+  .coxy-secondary {
+    color: hsl(var(--coxy-secondary));
+  }
+  
+  .coxy-accent {
+    color: hsl(var(--coxy-accent));
+  }
+  
+  .coxy-light {
+    color: hsl(var(--coxy-light));
+  }
+  
+  .coxy-dark {
+    color: hsl(var(--coxy-dark));
+  }
+  
+  .bg-coxy-primary {
+    background-color: hsl(var(--coxy-primary));
+  }
+  
+  .bg-coxy-secondary {
+    background-color: hsl(var(--coxy-secondary));
+  }
+  
+  .bg-coxy-accent {
+    background-color: hsl(var(--coxy-accent));
+  }
+  
+  .bg-coxy-light {
+    background-color: hsl(var(--coxy-light));
+  }
+  
+  .bg-coxy-dark {
+    background-color: hsl(var(--coxy-dark));
+  }
+  
+  .border-coxy-primary {
+    border-color: hsl(var(--coxy-primary));
+  }
+  
+  .border-coxy-secondary {
+    border-color: hsl(var(--coxy-secondary));
+  }
+  
+  .border-coxy-accent {
+    border-color: hsl(var(--coxy-accent));
+  }
+}
+
+@layer base {
+  :root {
+    /* Black & White Brand Colors */
+    --coxy-primary: 0 0% 0%;            /* Pure Black - Primary brand color */
+    --coxy-secondary: 0 0% 50%;         /* Medium Gray - Secondary accent */
+    --coxy-accent: 0 0% 20%;            /* Dark Gray - Accent color */
+    --coxy-light: 0 0% 95%;             /* Very Light Gray - Backgrounds */
+    --coxy-dark: 0 0% 10%;              /* Very Dark Gray - Text/contrast */
+    
+    /* System Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+    --chart-1: 0 0% 0%;
+    --chart-2: 0 0% 50%;
+    --chart-3: 0 0% 20%;
+    --chart-4: 0 0% 30%;
+    --chart-5: 0 0% 70%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    /* Black & White Brand Colors - Dark Mode */
+    --coxy-primary: 0 0% 100%;          /* Pure White - Primary brand color */
+    --coxy-secondary: 0 0% 50%;         /* Medium Gray - Secondary accent */
+    --coxy-accent: 0 0% 80%;            /* Light Gray - Accent color */
+    --coxy-light: 0 0% 5%;              /* Very Dark Gray - Dark backgrounds */
+    --coxy-dark: 0 0% 90%;              /* Light Gray - Text/contrast */
+    
+    /* System Colors - Dark Mode */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 90%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 50%;
+    --chart-3: 0 0% 80%;
+    --chart-4: 0 0% 70%;
+    --chart-5: 0 0% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+}

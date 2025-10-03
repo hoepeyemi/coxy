@@ -1,0 +1,30 @@
+{
+  "name": "domain-monitor",
+  "version": "1.0.0",
+  "description": "Domain monitoring service using Doma Protocol API",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node start-monitor.mjs",
+    "start-simple": "node index-simple.mjs",
+    "start-working": "node index-working.mjs",
+    "dev": "node --watch start-monitor.mjs",
+    "test": "node test-domain-monitor.mjs",
+    "test-api": "node test-api-connection.mjs",
+    "discover-events": "node discover-event-types.mjs",
+    "init-events": "node index-simple.mjs",
+    "clear-db": "node clear-database.mjs",
+    "setup": "node setup-database-simple.mjs",
+    "setup-sql": "echo 'Please run the SQL in supabase-schema.sql in your Supabase dashboard'",
+    "fix-rls": "echo 'Please run the SQL in fix-rls-policies.sql in your Supabase dashboard'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.3",
+    "axios": "^1.7.8",
+    "dotenv": "^16.4.5",
+    "node-cron": "^3.0.3"
+  },
+  "keywords": ["domain", "web3", "monitoring", "webhooks"],
+  "author": "Coxy Team",
+  "license": "MIT"
+}
