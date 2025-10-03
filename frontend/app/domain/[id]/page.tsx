@@ -23,13 +23,24 @@ async function getDomainData(domainId: string) {
     });
 
     if (!response.ok) {
+      console.error(`API request failed: ${response.status} ${response.statusText}`);
+      // Try to get error details
+      try {
+        const errorData = await response.json();
+        console.error('API error details:', errorData);
+      } catch (e) {
+        console.error('Could not parse error response');
+      }
       throw new Error(`Failed to fetch domain data: ${response.status}`);
     }
 
     const data = await response.json();
     const domainEvents = data.events || [];
     
+    console.log(`Found ${domainEvents.length} events for domain: ${domainId}`);
+    
     if (domainEvents.length === 0) {
+      console.log(`No events found for domain: ${domainId}`);
       return null;
     }
 

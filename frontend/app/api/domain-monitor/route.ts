@@ -90,16 +90,57 @@ async function getDomainEvents(request: NextRequest, supabase: SupabaseClient<an
     query = query.eq('type', eventType);
   }
 
+  let data = [];
+  let error = null;
+
   if (domainName) {
-    query = query.ilike('name', `%${domainName}%`);
+    // Search by domain name first
+    const nameQuery = supabase
+      .from('domain_events')
+      .select('*')
+      .ilike('name', `%${domainName}%`)
+      .order('created_at', { ascending: false })
+      .range(offset, offset + limit - 1);
+
+    const { data: nameData, error: nameError } = await nameQuery;
+    
+    if (nameError) {
+      console.error('Name search error:', nameError);
+    } else {
+      data = nameData || [];
+    }
+
+    // If no results from name search, try event_id search
+    if (data.length === 0) {
+      const eventIdQuery = supabase
+        .from('domain_events')
+        .select('*')
+        .eq('event_id', domainName)
+        .order('created_at', { ascending: false })
+        .range(offset, offset + limit - 1);
+
+      const { data: eventIdData, error: eventIdError } = await eventIdQuery;
+      
+      if (eventIdError) {
+        console.error('Event ID search error:', eventIdError);
+        error = eventIdError;
+      } else {
+        data = eventIdData || [];
+      }
+    }
+  } else {
+    // No domain filter, use original query
+    const { data: queryData, error: queryError } = await query;
+    data = queryData || [];
+    error = queryError;
   }
 
-  const { data, error } = await query;
-
   if (error) {
+    console.error('Database query error:', error);
     throw error;
   }
 
+  console.log(`Found ${data?.length || 0} events for domain: ${domainName}`);
   return NextResponse.json({ events: data || [] });
 }
 
