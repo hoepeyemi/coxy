@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "player",
-    site: "https://x.com/coxy_domain",
+    site: "https://x.com/CoxyDo1130",
     title: "Coxy | Domain Intelligence Platform",
     images: ["https://coxy-domain.onrender.com/coxy dora.png"],
     description:

@@ -330,7 +330,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Live App**: [https://zorox-ai.vercel.app/](https://zorox-ai.vercel.app/)
 - **Demo Video**: [Watch Demo](https://www.canva.com/design/DAGZKlSQ674/sKdyTpeTJ7oqJn85P8o2cg/watch)
 - **Presentation Deck**: [View Deck](https://www.canva.com/design/DAGZKe_9vEc/eRRZxCtQpk1QxFSjz3ZT2A/view)
-- **Twitter**: [@iris_internet](https://x.com/iris_internet)
+- **Twitter**: [@CoxyDo1130](https://x.com/CoxyDo1130)
 - **GitHub**: [Repository](https://github.com/gabrielantonyxaviour/zorox)
 
 ---
@@ -339,5 +339,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 *Building the future of domain investment intelligence*
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/gabrielaxyeth?style=social)](https://twitter.com/gabrielaxyeth)
+[![Twitter Follow](https://img.shields.io/twitter/follow/CoxyDo1130?style=social)](https://twitter.com/CoxyDo1130)
 [![GitHub Stars](https://img.shields.io/github/stars/gabrielantonyxaviour/zorox?style=social)](https://github.com/gabrielantonyxaviour/zorox)
