@@ -61,13 +61,28 @@ export default function DomainPageClient({ domain, events, totalEvents, domainId
   };
 
   const handleViewMarketplace = () => {
-    // Open marketplace in new tab
-    const marketplaceUrl = `https://doma.xyz/domain/${domain.name || domainId}`;
-    window.open(marketplaceUrl, '_blank');
-    toast({
-      title: "Opening Marketplace",
-      description: `Viewing ${domain.name || domainId} on Doma marketplace`,
-    });
+    // Check if this is a real domain name or just an event ID
+    const isRealDomain = domain.name && domain.name.includes('.');
+    
+    if (isRealDomain) {
+      // If it's a real domain name, try to open it on the marketplace
+      const marketplaceUrl = `https://doma.xyz/domain/${domain.name}`;
+      window.open(marketplaceUrl, '_blank');
+      toast({
+        title: "Opening Marketplace",
+        description: `Viewing ${domain.name} on Doma marketplace`,
+      });
+    } else {
+      // If it's an event ID, show a helpful message and open the main marketplace
+      toast({
+        title: "Event ID Detected",
+        description: "This is an event ID, not a domain name. Opening Doma marketplace to browse domains.",
+        variant: "default",
+      });
+      
+      // Open the main marketplace for browsing
+      window.open('https://doma.xyz', '_blank');
+    }
   };
 
   const handleTrackPrice = () => {
@@ -156,6 +171,11 @@ export default function DomainPageClient({ domain, events, totalEvents, domainId
                   <div>
                     <p className="text-sm font-medium text-gray-500">Domain Name</p>
                     <p className="text-lg font-semibold">{domain.name || 'N/A'}</p>
+                    {domain.name && !domain.name.includes('.') && (
+                      <p className="text-xs text-amber-600 mt-1">
+                        ⚠️ This is an event ID, not a domain name
+                      </p>
+                    )}
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-500">Event Type</p>
@@ -242,7 +262,7 @@ export default function DomainPageClient({ domain, events, totalEvents, domainId
                   onClick={handleViewMarketplace}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  View on Marketplace
+                  {domain.name && domain.name.includes('.') ? 'View on Marketplace' : 'Browse Marketplace'}
                 </Button>
                 <Button 
                   className="w-full" 
