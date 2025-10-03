@@ -162,15 +162,15 @@ const pumpfunSample = {
 
               "bro buy kitcat NOW 💰",
 
-              "These dips don’t scare me, buying kitcat",
+              "These dips don't scare me, buying kitcat",
 
               "Shall I buy $kitcat?",
 
-              "Already up 3x on $kitcat, and I’m still holding",
+              "Already up 3x on $kitcat, and I'm still holding",
 
               "$kitcat is IT rn 🔥🔥🔥🔥",
 
-              "Check out $OpiumPepe. Got a great community behind it and recently got the whales out of the coin it’s ready to launch. 🚀 🐸🚀",
+              "Check out $OpiumPepe. Got a great community behind it and recently got the whales out of the coin it's ready to launch. 🚀 🐸🚀",
 
             ],
 
@@ -236,39 +236,39 @@ const pumpfunSample = {
 
             data: [
 
-              "NYRIZZ🚀’s comment: We early🚨",
+              "NYRIZZ🚀's comment: We early🚨",
 
-              "TheBullReefer’s comment: Alon stop they will really believe they should 😭",
+              "TheBullReefer's comment: Alon stop they will really believe they should 😭",
 
-              "Zeph’s comment: am i verified?",
+              "Zeph's comment: am i verified?",
 
-              "Hantz’s comment: $LIL BRO",
+              "Hantz's comment: $LIL BRO",
 
-              "vis_onlyyy’s comment: if anyone wants to trade memecoins, join trojan by my referral.\nping me",
+              "vis_onlyyy's comment: if anyone wants to trade memecoins, join trojan by my referral.\nping me",
 
-              "Rhys Thomas’s comment: $KINGJALUCE 🚀 for all of his predictions",
+              "Rhys Thomas's comment: $KINGJALUCE 🚀 for all of his predictions",
 
-              "stfn.ia’s comment: $DUMPMAS",
+              "stfn.ia's comment: $DUMPMAS",
 
-              "SOOTcoin’s comment: Soot😏😏",
+              "SOOTcoin's comment: Soot😏😏",
 
-              "S0LGUY’s comment: That’s why u gotta do rug pulls instead like me",
+              "S0LGUY's comment: That's why u gotta do rug pulls instead like me",
 
-              "Just.Benji’s comment: How pumpfun keep posting these bangers",
+              "Just.Benji's comment: How pumpfun keep posting these bangers",
 
-              "Luca’s comment: Spacexdoge",
+              "Luca's comment: Spacexdoge",
 
-              "bloody.marion’s comment: lol scams",
+              "bloody.marion's comment: lol scams",
 
-              "GHOST’s comment: The best meme coin to hold $ROT",
+              "GHOST's comment: The best meme coin to hold $ROT",
 
-              "to the moon’s comment: $CHUNGS BOUT TO MAKE ME RICH",
+              "to the moon's comment: $CHUNGS BOUT TO MAKE ME RICH",
 
-              "BoBo’s comment: They all scammers and ruggers especially legion",
+              "BoBo's comment: They all scammers and ruggers especially legion",
 
-              "itzmmzatherealtor’s comment: $dumpfun",
+              "itzmmzatherealtor's comment: $dumpfun",
 
-              "Mestre Ensinador’s comment: $Tiburcio",
+              "Mestre Ensinador's comment: $Tiburcio",
 
             ],
 
@@ -320,45 +320,45 @@ const pumpfunSample = {
 
             data: [
 
-              "Rabeya Symon’s comment: nice",
+              "Rabeya Symon's comment: nice",
 
-              "$DIEGO’s comment: $DIEGO",
+              "$DIEGO's comment: $DIEGO",
 
-              "Rabeya Symon’s comment: 🥰🥰🥰",
+              "Rabeya Symon's comment: 🥰🥰🥰",
 
-              "Manan’s comment: 😁😁😁",
+              "Manan's comment: 😁😁😁",
 
-              "maddevimusic’s comment: 🔥🔥 Guys $BRLM Breloom to the moon 🌛🚀 its blowing up!!! 💥💥",
+              "maddevimusic's comment: 🔥🔥 Guys $BRLM Breloom to the moon 🌛🚀 its blowing up!!! 💥💥",
 
-              "Дима’s comment: Bet kitcat",
+              "Дима's comment: Bet kitcat",
 
-              "Roza Lolo’s comment: ur portfolio needs $kitcat. buy it.",
+              "Roza Lolo's comment: ur portfolio needs $kitcat. buy it.",
 
-              "sasa’s comment: holding $kitcat tight 💎🔥🔥🔥🔥",
+              "sasa's comment: holding $kitcat tight 💎🔥🔥🔥🔥",
 
-              "Friendly lip’s comment: lol imagine not holding $kitcat rn. memes and ai? come on",
+              "Friendly lip's comment: lol imagine not holding $kitcat rn. memes and ai? come on",
 
-              "mila56.4’s comment: buy $kitcat now 🔥",
+              "mila56.4's comment: buy $kitcat now 🔥",
 
-              "RippleMoon’s comment: 🚀XMoon🚀 Join our meme coin XRP Army as we are powered by the rise of XRP to the moon! 🌚",
+              "RippleMoon's comment: 🚀XMoon🚀 Join our meme coin XRP Army as we are powered by the rise of XRP to the moon! 🌚",
 
-              "mondahatem’s comment: Every week, I’m more bullish on kitcat",
+              "mondahatem's comment: Every week, I'm more bullish on kitcat",
 
-              "Sarowar’s comment: 💎💎 $kitcat moon 🌕🔥🚀",
+              "Sarowar's comment: 💎💎 $kitcat moon 🌕🔥🚀",
 
-              "Rabeya Symon’s comment: 🔥🔥 Guys $BRLM Breloom to the moon 🌛🚀 its blowing up!!! 💥💥",
+              "Rabeya Symon's comment: 🔥🔥 Guys $BRLM Breloom to the moon 🌛🚀 its blowing up!!! 💥💥",
 
-              "Muhammad Ali’s comment: these ai cats are cooking something big. kitcat to the moon",
+              "Muhammad Ali's comment: these ai cats are cooking something big. kitcat to the moon",
 
-              "child@ayan.umar’s comment: LFG $kitcat fam 🌕🔥🔥🚀",
+              "child@ayan.umar's comment: LFG $kitcat fam 🌕🔥🔥🚀",
 
-              "Mohammad Rubel’s comment: STOP scrolling & buy kitcat!!!",
+              "Mohammad Rubel's comment: STOP scrolling & buy kitcat!!!",
 
-              "mima12121’s comment: buy $kitcat or you’ll regret it",
+              "mima12121's comment: buy $kitcat or you'll regret it",
 
-              "milanka’s comment: idk what’s crazier, the ai agent or the memes. kitcat",
+              "milanka's comment: idk what's crazier, the ai agent or the memes. kitcat",
 
-              "Farida Ali’s comment: too early to stop… buy kitcat",
+              "Farida Ali's comment: too early to stop… buy kitcat",
 
               "Join my telegram group!! Daily calls and we are going to push coins ‼️Link in bio🚀🚀",
 
@@ -366,9 +366,9 @@ const pumpfunSample = {
 
               "$Santasol! Going crazy!!",
 
-              "67k in 3 hours copying @Andrew Willis trade. He’s a true trading genius!",
+              "67k in 3 hours copying @Andrew Willis trade. He's a true trading genius!",
 
-              "solana memes aren’t playing anymore. kitcat added ai",
+              "solana memes aren't playing anymore. kitcat added ai",
 
               "My portfolio? Mostly $kitcat",
 
@@ -376,7 +376,7 @@ const pumpfunSample = {
 
               "holding tight bc this ai stuff on $kitcat is no joke",
 
-              "kitcat fam let’s get it 💪",
+              "kitcat fam let's get it 💪",
 
               "$kitcat made my wallet look happy today",
 
@@ -388,7 +388,7 @@ const pumpfunSample = {
 
               "The future of crypto? Projects like kitcat",
 
-              "Check out $OpiumPepe. Got a great community behind it and recently got the whales out of the coin it’s ready to launch. 🚀 🐸🚀",
+              "Check out $OpiumPepe. Got a great community behind it and recently got the whales out of the coin it's ready to launch. 🚀 🐸🚀",
 
               "😏",
 
@@ -1637,824 +1637,3 @@ export {
   wallets,
 
 };
-
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Typography",
-
-          href: "/docs/components/typography",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Open in v0",
-
-          href: "/docs/v0",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Figma",
-
-          href: "/docs/figma",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Changelog",
-
-          href: "/docs/changelog",
-
-          items: [],
-
-        },
-
-      ],
-
-    },
-
-    {
-
-      title: "Installation",
-
-      items: [
-
-        {
-
-          title: "Next.js",
-
-          href: "/docs/installation/next",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Vite",
-
-          href: "/docs/installation/vite",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Remix",
-
-          href: "/docs/installation/remix",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Astro",
-
-          href: "/docs/installation/astro",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Laravel",
-
-          href: "/docs/installation/laravel",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Gatsby",
-
-          href: "/docs/installation/gatsby",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Manual",
-
-          href: "/docs/installation/manual",
-
-          items: [],
-
-        },
-
-      ],
-
-    },
-
-    {
-
-      title: "Components",
-
-      items: [
-
-        {
-
-          title: "Sidebar",
-
-          href: "/docs/components/sidebar",
-
-          items: [],
-
-          label: "New",
-
-        },
-
-        {
-
-          title: "Accordion",
-
-          href: "/docs/components/accordion",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Alert",
-
-          href: "/docs/components/alert",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Alert Dialog",
-
-          href: "/docs/components/alert-dialog",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Aspect Ratio",
-
-          href: "/docs/components/aspect-ratio",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Avatar",
-
-          href: "/docs/components/avatar",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Badge",
-
-          href: "/docs/components/badge",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Breadcrumb",
-
-          href: "/docs/components/breadcrumb",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Button",
-
-          href: "/docs/components/button",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Calendar",
-
-          href: "/docs/components/calendar",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Card",
-
-          href: "/docs/components/card",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Carousel",
-
-          href: "/docs/components/carousel",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Chart",
-
-          href: "/docs/components/chart",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Checkbox",
-
-          href: "/docs/components/checkbox",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Collapsible",
-
-          href: "/docs/components/collapsible",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Combobox",
-
-          href: "/docs/components/combobox",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Command",
-
-          href: "/docs/components/command",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Context Menu",
-
-          href: "/docs/components/context-menu",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Data Table",
-
-          href: "/docs/components/data-table",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Date Picker",
-
-          href: "/docs/components/date-picker",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Dialog",
-
-          href: "/docs/components/dialog",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Drawer",
-
-          href: "/docs/components/drawer",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Dropdown Menu",
-
-          href: "/docs/components/dropdown-menu",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Form",
-
-          href: "/docs/components/form",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Hover Card",
-
-          href: "/docs/components/hover-card",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Input",
-
-          href: "/docs/components/input",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Input OTP",
-
-          href: "/docs/components/input-otp",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Label",
-
-          href: "/docs/components/label",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Menubar",
-
-          href: "/docs/components/menubar",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Navigation Menu",
-
-          href: "/docs/components/navigation-menu",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Pagination",
-
-          href: "/docs/components/pagination",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Popover",
-
-          href: "/docs/components/popover",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Progress",
-
-          href: "/docs/components/progress",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Radio Group",
-
-          href: "/docs/components/radio-group",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Resizable",
-
-          href: "/docs/components/resizable",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Scroll Area",
-
-          href: "/docs/components/scroll-area",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Select",
-
-          href: "/docs/components/select",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Separator",
-
-          href: "/docs/components/separator",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Sheet",
-
-          href: "/docs/components/sheet",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Skeleton",
-
-          href: "/docs/components/skeleton",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Slider",
-
-          href: "/docs/components/slider",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Sonner",
-
-          href: "/docs/components/sonner",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Switch",
-
-          href: "/docs/components/switch",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Table",
-
-          href: "/docs/components/table",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Tabs",
-
-          href: "/docs/components/tabs",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Textarea",
-
-          href: "/docs/components/textarea",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Toast",
-
-          href: "/docs/components/toast",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Toggle",
-
-          href: "/docs/components/toggle",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Toggle Group",
-
-          href: "/docs/components/toggle-group",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Tooltip",
-
-          href: "/docs/components/tooltip",
-
-          items: [],
-
-        },
-
-      ],
-
-    },
-
-  ],
-
-  chartsNav: [
-
-    {
-
-      title: "Getting Started",
-
-      items: [
-
-        {
-
-          title: "Introduction",
-
-          href: "/docs/charts",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Installation",
-
-          href: "/docs/charts/installation",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Theming",
-
-          href: "/docs/charts/theming",
-
-          items: [],
-
-        },
-
-      ],
-
-    },
-
-    {
-
-      title: "Charts",
-
-      items: [
-
-        {
-
-          title: "Area Chart",
-
-          href: "/docs/charts/area",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Bar Chart",
-
-          href: "/docs/charts/bar",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Line Chart",
-
-          href: "/docs/charts/line",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Pie Chart",
-
-          href: "/docs/charts/pie",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Radar Chart",
-
-          href: "/docs/charts/radar",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Radial Chart",
-
-          href: "/docs/charts/radial",
-
-          items: [],
-
-        },
-
-      ],
-
-    },
-
-    {
-
-      title: "Components",
-
-      items: [
-
-        {
-
-          title: "Tooltip",
-
-          href: "/docs/charts/tooltip",
-
-          items: [],
-
-        },
-
-        {
-
-          title: "Legend",
-
-          href: "/docs/charts/legend",
-
-          items: [],
-
-        },
-
-      ],
-
-    },
-
-  ],
-
-};
-
-const ZOROX_TREASURY_ADDRESS = "DUAqcapjRqWzkrC3TmA5Me9LnW4RxUdiuHiaqpL4XJEt";
-
-const wallets = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];
-
-export {
-
-  pumpfunSample,
-
-  ITEMS_PER_PAGE,
-
-  DUMMY_HERO_TABLE_DATA,
-
-  docsConfig,
-
-  TEST_BONK_TOKEN_MINT_ADDRESS,
-
-  ZOROX_TREASURY_ADDRESS,
-
-  IPFS_GATEWAY_URL,
-
-  IPFS_GATEWAY_URL_2,
-
-  IPFS_GATEWAY_URL_3,
-
-  IPFS_GATEWAY_URL_4,
-
-  wallets,
-
-};
-
-
