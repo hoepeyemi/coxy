@@ -5,9 +5,10 @@
   "main": "index.mjs",
   "type": "module",
   "scripts": {
-    "start": "node coxy-optimized-bot.mjs",
+    "start": "node start-bot.mjs",
+    "start-direct": "node coxy-optimized-bot.mjs",
     "start-old": "node index.mjs",
-    "dev": "node --watch coxy-optimized-bot.mjs",
+    "dev": "node --watch start-bot.mjs",
     "test": "node test-enhanced.mjs",
     "test-old": "node test-bot.mjs",
     "setup": "node setup-enhanced.mjs",
