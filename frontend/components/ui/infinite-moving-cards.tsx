@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 
 export const InfiniteMovingCards = ({
   items,
@@ -22,34 +23,6 @@ export const InfiniteMovingCards = ({
 
   const [start, setStart] = useState(false);
   
-  const addAnimation = useCallback(() => {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    // Mark that we're on the client side
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    // Only add animation after we're on the client side
-    if (!isClient) return;
-
-    addAnimation();
-  }, [isClient, addAnimation]);
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -65,6 +38,7 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -76,6 +50,35 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
+  const addAnimation = useCallback(() => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
+
+      getDirection();
+      getSpeed();
+      setStart(true);
+    }
+  }, [direction, speed]);
+
+  useEffect(() => {
+    // Mark that we're on the client side
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    // Only add animation after we're on the client side
+    if (!isClient) return;
+
+    addAnimation();
+  }, [isClient, addAnimation]);
   return (
     <div
       ref={containerRef}
@@ -101,7 +104,13 @@ export const InfiniteMovingCards = ({
             }}
             key={idx}
           >
-            <img className="rounded-xl w-[250px] h-[300px]" src={item} alt="Moving card item"></img>
+            <Image 
+              className="rounded-xl w-[250px] h-[300px]" 
+              src={item} 
+              alt="Moving card item"
+              width={250}
+              height={300}
+            />
           </li>
         ))}
       </ul>

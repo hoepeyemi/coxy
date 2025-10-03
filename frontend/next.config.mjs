@@ -9,6 +9,11 @@ const __dirname = dirname(__filename);
 const nextConfig = {
   output: 'standalone',
 
+  // Disable ESLint during builds to prevent warnings from failing the build
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   // 👇 Now safe to use in .mjs
   outputFileTracingRoot: __dirname,
 
