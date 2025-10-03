@@ -1,28 +1,29 @@
 # 🌐 Coxy - Domain Intelligence Platform
 
-**Coxy** is an autonomous AI-powered market intelligence platform designed for crypto enthusiasts and traders. It bridges the gap between market data and emerging opportunities by leveraging real-time analytics, blockchain data, and domain monitoring.
+**Coxy** is an autonomous AI-powered market intelligence platform designed for crypto enthusiasts and traders. It provides real-time Web3 domain analytics, market trends, and investment opportunities through advanced monitoring, AI-driven insights, and automated social media engagement.
 
-> **Tagline**: *"An Autonomous AI Agent that browses TikTok to help you find the hottest memecoins before they pump."*
+## 🚀 **Overview**
 
-## 🎯 **Project Overview**
+Coxy combines cutting-edge technology to deliver comprehensive domain intelligence:
 
-Coxy is a comprehensive market intelligence platform that combines:
-- **Real-time Web3 domain monitoring** using Doma Protocol API
-- **AI-powered Twitter bot** for automated opportunity sharing
-- **Modern React frontend** with Solana wallet integration
-- **Blockchain data scraping** for market analysis
-- **Advanced analytics** and trend detection
+- **Real-time market analysis** with pattern recognition and investment opportunity scoring
+- **Domain monitoring** using Doma Protocol API for Web3 domain events
+- **AI-powered Twitter bot** for automated social media posting and engagement
+- **Modern web interface** with advanced data visualization and analytics
+- **Blockchain integration** for comprehensive market data collection
 
 ## 🏗️ **Architecture**
+
+### **Multi-Component System**
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Frontend      │    │  Domain Monitor │    │  Twitter Bot    │
 │   (Next.js)     │◄──►│   (Node.js)     │◄──►│   (Node.js)     │
 │                 │    │                 │    │                 │
-│ • Dashboard     │    │ • Event Polling │    │ • AI Content    │
-│ • Analytics     │    │ • Data Storage  │    │ • Auto Posting  │
-│ • Wallet Conn.  │    │ • Webhooks      │    │ • Engagement    │
+│ • Dashboard     │    │ • Event Monitor │    │ • AI Tweets     │
+│ • Analytics     │    │ • Data Processor│    │ • Opportunity   │
+│ • Real-time UI  │    │ • HTTP Server   │    │   Detection     │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                       │                       │
          └───────────────────────┼───────────────────────┘
@@ -31,68 +32,41 @@ Coxy is a comprehensive market intelligence platform that combines:
                     │   Supabase      │
                     │   Database      │
                     │                 │
-                    │ • domain_events │
-                    │ • analytics     │
-                    │ • subscriptions │
-                    │ • tweets        │
+                    │ • Domain Events │
+                    │ • Analytics     │
+                    │ • User Data     │
                     └─────────────────┘
 ```
-
-## 🚀 **Key Features**
-
-### **🌐 Domain Intelligence**
-- **Real-time monitoring** of 13+ Web3 domain event types
-- **Advanced filtering** by price, length, extensions, and ownership
-- **Trend analysis** and opportunity scoring
-- **Webhook notifications** with customizable alerts
-- **Analytics dashboard** with real-time metrics
-
-### **🤖 AI-Powered Twitter Bot**
-- **Automated posting** of domain opportunities
-- **GPT-4 content generation** for engaging tweets
-- **Smart filtering** for high-value opportunities
-- **Engagement tracking** and performance analytics
-- **Community building** around domain investing
-
-### **📊 Market Analytics**
-- **Real-time data visualization** with interactive charts
-- **Trend detection** and pattern recognition
-- **Price tracking** and volume analysis
-- **Historical data** and performance metrics
-- **Custom dashboards** for different user types
-
-### **🔗 Blockchain Integration**
-- **Market data** scraping from multiple sources
-- **Real-time analytics** and trend detection
-- **AI-powered insights** and recommendations
 
 ## 📁 **Project Structure**
 
 ```
 coxy/
-├── frontend/                 # Next.js React application
-│   ├── app/                 # App router pages and API routes
-│   ├── components/          # Reusable UI components
-│   │   ├── dashboard/       # Dashboard-specific components
-│   │   ├── sections/        # Page sections
-│   │   └── ui/             # Base UI components (ShadCN)
-│   ├── lib/                # Utility functions and configurations
-│   └── hooks/              # Custom React hooks
+├── frontend/                 # Next.js web application
+│   ├── app/                 # Next.js 14 app router
+│   ├── components/          # React components
+│   ├── lib/                 # Utilities and types
+│   └── public/              # Static assets
 │
 ├── domain-monitor/          # Domain monitoring service
-│   ├── twitter-bot/        # AI-powered Twitter bot
+│   ├── start-monitor.mjs    # Main service entry point
+│   ├── index.mjs           # Domain monitoring logic
 │   ├── analytics-processor.mjs
-│   ├── subscription-manager.mjs
-│   └── index.mjs           # Main monitoring service
+│   └── twitter-bot/         # Twitter bot service
+│       ├── start-bot.mjs    # Bot entry point
+│       ├── coxy-optimized-bot.mjs
+│       └── enhanced-event-processor.mjs
 │
-├── bitquery/               # Blockchain data fetching
-│   ├── scripts/           # Data collection scripts
-│   └── results/           # Collected data storage
+├── bitquery/                # Blockchain data collection
+│   ├── index.mjs           # Main Bitquery service
+│   ├── scripts/            # Data collection scripts
+│   └── results/            # Collected data
 │
-├── js-scraper/            # Alternative web scraper
-│   └── [scraping modules]
+├── js-scraper/             # Web scraping service
+│   ├── index.mjs           # Main scraper
+│   └── scrapers/           # Individual scrapers
 │
-└── docker-compose.yml     # Container orchestration
+└── docker-compose.yml      # Docker orchestration
 ```
 
 ## 🛠️ **Technology Stack**
@@ -103,88 +77,83 @@ coxy/
 - **Styling**: TailwindCSS + ShadCN/UI
 - **State Management**: Zustand
 - **Charts**: Recharts + Lightweight Charts
-- **Blockchain**: Web3 data integration
+- **UI Components**: Radix UI primitives
 
 ### **Backend Services**
 - **Runtime**: Node.js with ES Modules
 - **Database**: Supabase (PostgreSQL)
 - **APIs**: Doma Protocol, Bitquery, OpenAI
-- **Scheduling**: Node-cron
-- **HTTP Client**: Axios
+- **Authentication**: Supabase Auth
+- **Real-time**: Supabase Realtime
 
-### **Infrastructure**
-- **Deployment**: Docker + Render
-- **Database**: Supabase (PostgreSQL)
-- **Environment**: dotenv
-- **Monitoring**: Built-in logging and analytics
+### **Data Collection**
+- **Web Scraping**: Selenium (Python) + Puppeteer (Node.js)
+- **Blockchain Data**: Bitquery API (GraphQL)
+- **Domain Events**: Doma Protocol API
+- **AI Integration**: OpenAI GPT-3.5-turbo
+
+### **Deployment**
+- **Platform**: Render.com
+- **Containerization**: Docker
+- **CI/CD**: Git-based deployment
 
 ## 🚀 **Quick Start**
 
 ### **Prerequisites**
-- Node.js 18+ and Yarn
+- Node.js 20+
+- Yarn package manager
 - Supabase account
 - Doma Protocol API key
+- OpenAI API key
 - Twitter API credentials (for bot)
-- OpenAI API key (for bot)
 
 ### **1. Clone Repository**
 ```bash
-git clone https://github.com/your-username/coxy.git
+git clone <repository-url>
 cd coxy
 ```
 
-### **2. Frontend Setup**
+### **2. Install Dependencies**
 ```bash
+# Frontend
 cd frontend
 yarn install
-cp env-template.txt .env.local
-# Edit .env.local with your API keys
-yarn dev
-```
 
-### **3. Domain Monitor Setup**
-```bash
-cd domain-monitor
+# Domain Monitor
+cd ../domain-monitor
 yarn install
-cp env.example .env
-# Edit .env with your API keys
-yarn setup
-yarn start
-```
 
-### **4. Twitter Bot Setup**
-```bash
-cd domain-monitor/twitter-bot
+# Twitter Bot
+cd twitter-bot
 yarn install
-cp env.example .env
-# Edit .env with your API keys
-yarn setup
-yarn start
+
+# Bitquery Service
+cd ../../bitquery
+yarn install
+
+# JS Scraper
+cd ../js-scraper
+yarn install
 ```
 
-## 🔧 **Configuration**
-
-### **Environment Variables**
+### **3. Environment Setup**
 
 #### **Frontend (.env.local)**
-```env
+```bash
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-BITQUERY_API_KEY=your_bitquery_api_key
-ACCESS_TOKEN=your_bitquery_access_token
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 ```
 
 #### **Domain Monitor (.env)**
-```env
+```bash
 DOMA_API_KEY=your_doma_api_key
 SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 ```
 
 #### **Twitter Bot (.env)**
-```env
+```bash
 TWITTER_API_KEY=your_twitter_api_key
 TWITTER_API_SECRET=your_twitter_api_secret
 TWITTER_ACCESS_TOKEN=your_access_token
@@ -192,152 +161,198 @@ TWITTER_ACCESS_SECRET=your_access_secret
 OPENAI_API_KEY=your_openai_api_key
 SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
+FRONTEND_URL=https://coxy.onrender.com
 ```
 
-## 📊 **Database Schema**
-
-### **Core Tables**
-- **`domain_events`** - All domain events from Doma Protocol
-- **`domain_subscriptions`** - User webhook subscriptions
-- **`domain_analytics`** - Aggregated domain statistics
-- **`domain_traits`** - Domain characteristics and scoring
-- **`twitter_tweets`** - Bot tweets and engagement data
-- **`twitter_analytics`** - Daily performance metrics
-
-## 🎯 **Use Cases**
-
-### **For Domain Traders**
-- Monitor high-value domain listings
-- Track domain sales and price movements
-- Get real-time alerts for opportunities
-- Analyze market trends and patterns
-
-### **For Domain Investors**
-- Identify trending domains early
-- Track portfolio performance
-- Discover undervalued opportunities
-- Access comprehensive market data
-
-### **For Developers**
-- Build domain analytics dashboards
-- Create domain trading bots
-- Integrate domain data into applications
-- Access real-time market APIs
-
-### **For Researchers**
-- Analyze domain market trends
-- Study domain naming patterns
-- Research Web3 domain adoption
-- Access historical market data
-
-## 🔄 **API Endpoints**
-
-### **Domain Monitor API**
-- `GET /api/domain-monitor?action=analytics` - General statistics
-- `GET /api/domain-monitor?action=events` - Recent domain events
-- `GET /api/domain-monitor?action=trends` - Trending domains
-- `GET /api/domain-monitor?action=prices` - Domain prices
-- `POST /api/domain-monitor?action=subscribe` - Create subscription
-
-### **Webhook Integration**
-- Real-time event notifications
-- Customizable filtering criteria
-- JSON payload format
-- Retry logic and error handling
-
-## 🚀 **Deployment**
-
-### **Docker Deployment**
+### **4. Database Setup**
 ```bash
-# Build and run with Docker Compose
-docker-compose up -d
+# Run database setup scripts
+cd domain-monitor
+yarn setup
+
+cd twitter-bot
+yarn setup
 ```
 
-### **Render Deployment**
-1. Connect your GitHub repository
-2. Set environment variables
-3. Deploy each service separately
-4. Configure database connections
+### **5. Start Services**
 
-### **Manual Deployment**
+#### **Development Mode**
 ```bash
-# Frontend (Vercel/Netlify)
+# Frontend
+cd frontend
+yarn dev
+
+# Domain Monitor
+cd domain-monitor
+yarn dev
+
+# Twitter Bot
+cd twitter-bot
+yarn dev
+```
+
+#### **Production Mode**
+```bash
+# Frontend
 cd frontend
 yarn build
 yarn start
 
-# Domain Monitor (Render/Heroku)
+# Domain Monitor
 cd domain-monitor
 yarn start
 
-# Twitter Bot (Render/Heroku)
-cd domain-monitor/twitter-bot
+# Twitter Bot
+cd twitter-bot
 yarn start
 ```
 
-## 📈 **Monitoring & Analytics**
+## 🔧 **Configuration**
 
-### **Built-in Monitoring**
-- Real-time event processing logs
-- API connectivity status
-- Database connection health
-- Webhook delivery success rates
-- Performance metrics and error tracking
+### **Domain Monitor**
+- **Poll Interval**: 30 seconds (configurable)
+- **Event Types**: Mints, transfers, listings, sales, offers, expirations, renewals
+- **Analytics**: Real-time processing and trend detection
+
+### **Twitter Bot**
+- **Tweet Interval**: 15 minutes (configurable)
+- **Max Daily Tweets**: 20 (configurable)
+- **AI Model**: GPT-3.5-turbo
+- **Content**: Domain opportunities, market insights, trending domains
+
+### **Frontend**
+- **Real-time Updates**: Supabase Realtime
+- **Data Refresh**: Automatic every 30 seconds
+- **Responsive Design**: Mobile-first approach
+
+## 📊 **Features**
+
+### **Domain Intelligence**
+- **Real-time Monitoring**: Track Web3 domain events across multiple protocols
+- **Trend Analysis**: Identify trending domains and market patterns
+- **Opportunity Detection**: AI-powered identification of investment opportunities
+- **Price Tracking**: Monitor domain prices and market movements
 
 ### **Analytics Dashboard**
-- Domain activity metrics
-- Market trend analysis
-- Bot engagement statistics
-- User subscription analytics
-- Real-time data visualization
+- **Interactive Charts**: Real-time data visualization
+- **Market Overview**: Comprehensive market statistics
+- **Trending Domains**: Top performing domains
+- **Recent Events**: Latest domain activities
 
-## 🛡️ **Security & Privacy**
+### **AI-Powered Twitter Bot**
+- **Automated Posting**: Share domain opportunities on Twitter
+- **AI Content Generation**: GPT-3.5-turbo powered tweet creation
+- **Engagement Tracking**: Monitor tweet performance and engagement
+- **Opportunity Alerts**: Real-time notifications for high-value domains
 
-- **API Key Management**: Secure environment variable storage
-- **Database Security**: Row Level Security (RLS) policies
-- **CORS Protection**: Configured for cross-origin requests
-- **Rate Limiting**: Respects API limits and quotas
-- **Error Handling**: Graceful degradation and logging
+### **Data Collection**
+- **Web Scraping**: Collect market data from various sources
+- **Blockchain Integration**: Fetch data from multiple blockchain networks
+- **API Integration**: Connect with external data providers
+- **Real-time Processing**: Process and analyze data in real-time
+
+## 🚀 **Deployment**
+
+### **Render.com Deployment**
+
+#### **Domain Monitor**
+1. Connect repository to Render
+2. Set root directory to `domain-monitor`
+3. Build command: `yarn install --frozen-lockfile`
+4. Start command: `node start-monitor.mjs`
+5. Health check path: `/health`
+
+#### **Twitter Bot**
+1. Connect repository to Render
+2. Set root directory to `domain-monitor/twitter-bot`
+3. Build command: `yarn install --frozen-lockfile`
+4. Start command: `node start-bot.mjs`
+5. Health check path: `/health`
+
+#### **Frontend**
+1. Connect repository to Render
+2. Set root directory to `frontend`
+3. Build command: `yarn install && yarn build`
+4. Start command: `yarn start`
+
+### **Docker Deployment**
+```bash
+# Build and run with Docker Compose
+docker-compose up --build
+```
+
+## 📈 **Monitoring & Health Checks**
+
+### **Service Endpoints**
+- **Domain Monitor**: `https://your-domain-monitor.onrender.com/health`
+- **Twitter Bot**: `https://your-twitter-bot.onrender.com/health`
+- **Frontend**: `https://your-frontend.onrender.com`
+
+### **Health Check Responses**
+```json
+{
+  "status": "healthy",
+  "service": "domain-monitor",
+  "timestamp": "2025-01-01T00:00:00.000Z",
+  "uptime": 3600
+}
+```
+
+## 🔒 **Security**
+
+- **Environment Variables**: All sensitive data stored in environment variables
+- **API Keys**: Secure storage and rotation
+- **Database**: Row Level Security (RLS) enabled
+- **CORS**: Properly configured for cross-origin requests
+- **Authentication**: Supabase Auth integration
+
+## 📚 **API Documentation**
+
+### **Domain Monitor API**
+- `GET /health` - Health check
+- `GET /status` - Service status
+- `POST /events` - Process domain events
+- `GET /analytics` - Get analytics data
+
+### **Twitter Bot API**
+- `GET /health` - Health check with bot status
+- `GET /status` - Service and bot information
+- `POST /start` - Start the bot
+- `POST /stop` - Stop the bot
+
+### **Frontend API Routes**
+- `/api/domain-monitor` - Domain data proxy
+- `/api/supabase/*` - Supabase integration
+- `/api/dashboard/*` - Dashboard data
 
 ## 🤝 **Contributing**
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-## 📝 **License**
+## 📄 **License**
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 **Support**
-
-- **Documentation**: Check individual component READMEs
-- **Issues**: Create GitHub issues for bugs or feature requests
-- **Discussions**: Use GitHub Discussions for questions
-- **Email**: Contact the development team
-
-## 🌟 **Acknowledgments**
-
-- **Doma Protocol** for domain event data
-- **Supabase** for database and real-time features
-- **OpenAI** for AI-powered content generation
-- **Next.js** and **React** for the frontend framework
-
 ## 🔗 **Links**
 
-- **Live App**: [https://zorox-ai.vercel.app/](https://zorox-ai.vercel.app/)
-- **Demo Video**: [Watch Demo](https://www.canva.com/design/DAGZKlSQ674/sKdyTpeTJ7oqJn85P8o2cg/watch)
-- **Presentation Deck**: [View Deck](https://www.canva.com/design/DAGZKe_9vEc/eRRZxCtQpk1QxFSjz3ZT2A/view)
+- **Live App**: [https://coxy.onrender.com](https://coxy.onrender.com)
 - **Twitter**: [@CoxyDo1130](https://x.com/CoxyDo1130)
-- **GitHub**: [Repository](https://github.com/gabrielantonyxaviour/zorox)
+- **GitHub**: [Repository](https://github.com/your-username/coxy)
+
+## 🆘 **Support**
+
+For support and questions:
+- Check the documentation in each service directory
+- Review the deployment guides
+- Open an issue on GitHub
+- Contact the development team
 
 ---
 
-**Made with ❤️ by Gabriel Antony Xaviour**
+**Made with ❤️ by the Coxy Team**
 
-*Building the future of domain investment intelligence*
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/gabrielaxyeth?style=social)](https://twitter.com/gabrielaxyeth)
-[![GitHub Stars](https://img.shields.io/github/stars/gabrielantonyxaviour/zorox?style=social)](https://github.com/gabrielantonyxaviour/zorox)
+*Empowering domain investors with AI-driven market intelligence*
