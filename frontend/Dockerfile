@@ -10,7 +10,8 @@ RUN apk add --no-cache \
     g++ \
     gcc \
     libc-dev \
-    linux-headers
+    linux-headers \
+    eudev-dev
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager

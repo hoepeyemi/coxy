@@ -19,6 +19,7 @@ RUN apk add --no-cache \
     gcc \
     libc-dev \
     linux-headers \
+    eudev-dev \
     && rm -rf /var/cache/apk/*
 
 # Tell Puppeteer to skip installing Chromium. We'll be using the installed package.
