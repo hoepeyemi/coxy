@@ -1,9 +1,13 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ExternalLink, Calendar, DollarSign, TrendingUp, Activity } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, DollarSign, TrendingUp, Activity, Bell, Copy, Check } from 'lucide-react';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 interface DomainPageProps {
   params: {
@@ -60,17 +64,69 @@ async function getDomainData(domainId: string) {
   }
 }
 
-export default async function DomainPage({ params, searchParams }: DomainPageProps) {
-  const { id } = params;
-  const { type } = searchParams;
-  
-  const domainData = await getDomainData(id);
+// Client component for interactive features
+function DomainPageClient({ domain, events, totalEvents, id, type }: {
+  domain: any;
+  events: any[];
+  totalEvents: number;
+  id: string;
+  type?: string;
+}) {
+  const { toast } = useToast();
+  const [isTracking, setIsTracking] = useState(false);
+  const [hasAlert, setHasAlert] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  if (!domainData) {
-    notFound();
-  }
+  const handleViewMarketplace = () => {
+    // Open marketplace in new tab
+    const marketplaceUrl = `https://doma.xyz/domain/${domain.name || id}`;
+    window.open(marketplaceUrl, '_blank');
+    toast({
+      title: "Opening Marketplace",
+      description: `Viewing ${domain.name || id} on Doma marketplace`,
+    });
+  };
 
-  const { domain, events, totalEvents } = domainData;
+  const handleTrackPrice = async () => {
+    setIsTracking(true);
+    // Simulate API call to start price tracking
+    setTimeout(() => {
+      setIsTracking(false);
+      toast({
+        title: "Price Tracking Started",
+        description: `Now tracking price changes for ${domain.name || id}`,
+      });
+    }, 1000);
+  };
+
+  const handleSetAlert = () => {
+    setHasAlert(!hasAlert);
+    toast({
+      title: hasAlert ? "Alert Removed" : "Alert Set",
+      description: hasAlert 
+        ? `Removed price alert for ${domain.name || id}`
+        : `Price alert set for ${domain.name || id}`,
+    });
+  };
+
+  const handleCopyLink = async () => {
+    const url = `${window.location.origin}/domain/${id}${type ? `?type=${type}` : ''}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      toast({
+        title: "Link Copied",
+        description: "Domain page link copied to clipboard",
+      });
+    } catch (err) {
+      toast({
+        title: "Copy Failed",
+        description: "Failed to copy link to clipboard",
+        variant: "destructive",
+      });
+    }
+  };
 
   const formatPrice = (price: number) => {
     if (price >= 1000000) {
@@ -236,17 +292,42 @@ export default async function DomainPage({ params, searchParams }: DomainPagePro
                 <CardTitle>Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button className="w-full" variant="outline">
+                <Button 
+                  className="w-full" 
+                  variant="outline" 
+                  onClick={handleViewMarketplace}
+                >
                   <ExternalLink className="w-4 h-4 mr-2" />
                   View on Marketplace
                 </Button>
-                <Button className="w-full" variant="outline">
-                  <TrendingUp className="w-4 h-4 mr-2" />
-                  Track Price
+                <Button 
+                  className="w-full" 
+                  variant="outline" 
+                  onClick={handleTrackPrice}
+                  disabled={isTracking}
+                >
+                  <TrendingUp className={`w-4 h-4 mr-2 ${isTracking ? 'animate-pulse' : ''}`} />
+                  {isTracking ? 'Starting...' : 'Track Price'}
                 </Button>
-                <Button className="w-full" variant="outline">
-                  <Activity className="w-4 h-4 mr-2" />
-                  Set Alert
+                <Button 
+                  className="w-full" 
+                  variant={hasAlert ? "default" : "outline"}
+                  onClick={handleSetAlert}
+                >
+                  <Bell className="w-4 h-4 mr-2" />
+                  {hasAlert ? 'Alert Set' : 'Set Alert'}
+                </Button>
+                <Button 
+                  className="w-full" 
+                  variant="outline" 
+                  onClick={handleCopyLink}
+                >
+                  {copied ? (
+                    <Check className="w-4 h-4 mr-2 text-green-600" />
+                  ) : (
+                    <Copy className="w-4 h-4 mr-2" />
+                  )}
+                  {copied ? 'Copied!' : 'Copy Link'}
                 </Button>
               </CardContent>
             </Card>
@@ -294,5 +375,29 @@ export default async function DomainPage({ params, searchParams }: DomainPagePro
         </div>
       </div>
     </div>
+  );
+}
+
+// Server component that fetches data
+export default async function DomainPage({ params, searchParams }: DomainPageProps) {
+  const { id } = params;
+  const { type } = searchParams;
+  
+  const domainData = await getDomainData(id);
+
+  if (!domainData) {
+    notFound();
+  }
+
+  const { domain, events, totalEvents } = domainData;
+
+  return (
+    <DomainPageClient 
+      domain={domain}
+      events={events}
+      totalEvents={totalEvents}
+      id={id}
+      type={type}
+    />
   );
 }
