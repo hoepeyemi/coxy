@@ -351,7 +351,7 @@ class LandingPageTracker {
   }
 
   async generateActionUrl(domain, type, campaign = 'domain_opportunity') {
-    const baseUrl = process.env.FRONTEND_URL || 'https://coxy.com';
+    const baseUrl = process.env.FRONTEND_URL || 'https://coxy.onrender.com';
     const params = new URLSearchParams({
       domain: domain,
       type: type,

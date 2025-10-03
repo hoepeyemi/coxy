@@ -409,7 +409,7 @@ class EnhancedEventProcessor {
   }
 
   generateActionUrl(domain, type) {
-    const baseUrl = process.env.FRONTEND_URL || 'https://coxy.com';
+    const baseUrl = process.env.FRONTEND_URL || 'https://coxy.onrender.com';
     return `${baseUrl}/domain/${encodeURIComponent(domain)}?type=${type}`;
   }
 

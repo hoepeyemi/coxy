@@ -15,7 +15,7 @@ const TWITTER_ACCESS_SECRET = process.env.TWITTER_ACCESS_SECRET;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_ANON_KEY;
-const FRONTEND_URL = process.env.FRONTEND_URL || 'https://coxy.com';
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://coxy.onrender.com';
 
 // Bot configuration
 const HIGH_VALUE_THRESHOLD = parseInt(process.env.HIGH_VALUE_THRESHOLD) || 1000;

@@ -98,7 +98,7 @@ SUPABASE_URL=your_supabase_url_here
 SUPABASE_ANON_KEY=your_supabase_anon_key_here
 
 # Frontend Configuration
-FRONTEND_URL=https://coxy.com
+FRONTEND_URL=https://coxy.onrender.com
 
 # Bot Configuration
 HIGH_VALUE_THRESHOLD=1000
@@ -175,7 +175,7 @@ npm start
 ⏰ URGENT: premium.com just expired! 
 💎 5-character .com domain available now
 🚀 Estimated value: $50,000+
-🔗 Check availability: https://coxy.com/domain/premium.com?type=expired
+🔗 Check availability: https://coxy.onrender.com/domain/premium.com?type=expired
 
 #DomainInvesting #Web3 #DigitalAssets #Coxy
 ```
@@ -185,7 +185,7 @@ npm start
 💰 BREAKING: crypto.io sold for $125,000!
 🔥 Premium .io domain with massive potential
 📈 Similar domains trending now
-🔗 Find similar opportunities: https://coxy.com/domain/crypto.io?type=similar
+🔗 Find similar opportunities: https://coxy.onrender.com/domain/crypto.io?type=similar
 
 #DomainInvesting #Web3 #DigitalAssets #Coxy
 ```
@@ -195,7 +195,7 @@ npm start
 🔥 TRENDING: nft.eth with 8 recent events!
 📈 High activity indicates strong interest
 💎 Perfect for Web3 projects
-🔗 Track this domain: https://coxy.com/domain/nft.eth?type=trending
+🔗 Track this domain: https://coxy.onrender.com/domain/nft.eth?type=trending
 
 #DomainTrends #Web3 #DigitalAssets #Coxy
 ```
@@ -205,7 +205,7 @@ npm start
 🆕 NEW LISTING: startup.ai for $15,000!
 ✨ Brandable domain perfect for AI companies
 🎯 High brandability score: 95/100
-🔗 View listing: https://coxy.com/domain/startup.ai?type=listing
+🔗 View listing: https://coxy.onrender.com/domain/startup.ai?type=listing
 
 #DomainInvesting #Web3 #DigitalAssets #Coxy
 ```
