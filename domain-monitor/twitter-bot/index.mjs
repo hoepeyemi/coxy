@@ -47,19 +47,6 @@ class DomainTwitterBot {
     this.lastOpportunityCheck = null;
   }
 
-  // Check if the domain name is a real domain (contains a dot) and not an event ID
-  isValidDomainName(domainName) {
-    if (!domainName || typeof domainName !== 'string') {
-      return false;
-    }
-    
-    // Check if it contains a dot (real domain) and is not an event ID
-    const hasDot = domainName.includes('.');
-    const isEventId = /^(Event-|Command-|Name-)\d+$/i.test(domainName);
-    
-    return hasDot && !isEventId;
-  }
-
   async initialize() {
     console.log('🤖 Starting Domain Twitter Bot...');
     
@@ -410,14 +397,7 @@ Key guidelines:
         return "📊 Weekly domain market analysis: Data processing... #DomainInvesting #Web3 #Coxy";
       }
 
-      // Filter out events with invalid domain names (event IDs)
-      const validEvents = events.filter(event => 
-        this.isValidDomainName(event.name)
-      );
-
-      console.log(`📊 Filtered ${events.length} events to ${validEvents.length} valid domain events for weekly stats`);
-
-      const stats = this.calculateWeeklyStats(validEvents);
+      const stats = this.calculateWeeklyStats(events);
       
       const prompt = `Create a weekly domain market analysis tweet with these stats:
       - Total events this week: ${stats.totalEvents}
@@ -545,14 +525,7 @@ Key guidelines:
         return "📊 Daily domain market update: Data processing... #DomainInvesting #Web3";
       }
 
-      // Filter out events with invalid domain names (event IDs)
-      const validEvents = events.filter(event => 
-        this.isValidDomainName(event.name)
-      );
-
-      console.log(`📊 Filtered ${events.length} events to ${validEvents.length} valid domain events for daily stats`);
-
-      const stats = this.calculateDailyStats(validEvents);
+      const stats = this.calculateDailyStats(events);
       
       const prompt = `Create a daily domain market summary tweet with these stats:
       - Total events: ${stats.totalEvents}

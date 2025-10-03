@@ -70,13 +70,7 @@ class EnhancedEventProcessor {
       return [];
     }
 
-    // Filter out events with invalid domain names (event IDs)
-    const validEvents = (events || []).filter(event => 
-      this.isValidDomainName(event.name)
-    );
-
-    console.log(`📊 Filtered ${(events || []).length} events to ${validEvents.length} valid domain events`);
-    return validEvents;
+    return events || [];
   }
 
   async processExpiredDomains(events) {
@@ -117,9 +111,8 @@ class EnhancedEventProcessor {
       };
     });
 
-    // Filter by price criteria and valid domain names
+    // Filter by price criteria
     return sales.filter(sale => 
-      this.isValidDomainName(sale.domain) &&
       sale.price && sale.price >= this.criteria.highValue.minPrice
     );
   }
@@ -149,10 +142,9 @@ class EnhancedEventProcessor {
       domainActivity[event.name].lastSeen = event.created_at;
     });
 
-    // Filter by trending criteria and valid domain names
+    // Filter by trending criteria
     return Object.values(domainActivity)
       .filter(domain => 
-        this.isValidDomainName(domain.domain) &&
         domain.activityCount >= this.criteria.trending.minEvents
       )
       .map(domain => ({
@@ -168,19 +160,17 @@ class EnhancedEventProcessor {
       this.eventTypes.LISTINGS.includes(event.type)
     );
 
-    return listingEvents
-      .filter(event => this.isValidDomainName(event.name)) // Filter out event IDs
-      .map(event => {
-        const price = this.extractPrice(event.event_data);
-        return {
-          domain: event.name,
-          price: price,
-          listingType: event.type,
-          listedAt: event.created_at,
-          eventData: event.event_data,
-          priority: this.calculateListingPriority(event, price)
-        };
-      });
+    return listingEvents.map(event => {
+      const price = this.extractPrice(event.event_data);
+      return {
+        domain: event.name,
+        price: price,
+        listingType: event.type,
+        listedAt: event.created_at,
+        eventData: event.event_data,
+        priority: this.calculateListingPriority(event, price)
+      };
+    });
   }
 
   async generateOpportunities(processedEvents) {
@@ -368,19 +358,6 @@ class EnhancedEventProcessor {
     return Math.min(priority, 100);
   }
 
-  // Check if the domain name is a real domain (contains a dot) and not an event ID
-  isValidDomainName(domainName) {
-    if (!domainName || typeof domainName !== 'string') {
-      return false;
-    }
-    
-    // Check if it contains a dot (real domain) and is not an event ID
-    const hasDot = domainName.includes('.');
-    const isEventId = /^(Event-|Command-|Name-)\d+$/i.test(domainName);
-    
-    return hasDot && !isEventId;
-  }
-
   isDomainAvailable(domain, expiredAt) {
     const gracePeriod = this.criteria.expired.gracePeriod * 24 * 60 * 60 * 1000;
     const now = Date.now();
@@ -390,8 +367,7 @@ class EnhancedEventProcessor {
   }
 
   meetsExpiredCriteria(domain) {
-    return this.isValidDomainName(domain.domain) &&
-           domain.isAvailable && 
+    return domain.isAvailable && 
            domain.domain.length >= this.criteria.highValue.minLength &&
            domain.domain.length <= this.criteria.highValue.maxLength;
   }
