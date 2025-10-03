@@ -12,6 +12,19 @@ class OpportunityAnalyzer {
     this.volumeThreshold = 10000;
   }
 
+  // Check if the domain name is a real domain (contains a dot) and not an event ID
+  isValidDomainName(domainName) {
+    if (!domainName || typeof domainName !== 'string') {
+      return false;
+    }
+    
+    // Check if it contains a dot (real domain) and is not an event ID
+    const hasDot = domainName.includes('.');
+    const isEventId = /^(Event-|Command-|Name-)\d+$/i.test(domainName);
+    
+    return hasDot && !isEventId;
+  }
+
   async analyzeOpportunities() {
     try {
       console.log('🔍 Analyzing domain opportunities...');
@@ -28,15 +41,22 @@ class OpportunityAnalyzer {
         return [];
       }
 
+      // Filter out events with invalid domain names (event IDs)
+      const validEvents = (events || []).filter(event => 
+        this.isValidDomainName(event.name)
+      );
+
+      console.log(`📊 Filtered ${(events || []).length} events to ${validEvents.length} valid domain events`);
+
       const opportunities = {
-        highValueSales: this.findHighValueSales(events),
-        trendingDomains: this.findTrendingDomains(events),
-        expiredDomains: this.findExpiredDomains(events),
-        newMints: this.findNewMints(events),
-        volumeSpikes: this.findVolumeSpikes(events),
-        rareExtensions: this.findRareExtensions(events),
-        shortDomains: this.findShortDomains(events),
-        brandableDomains: this.findBrandableDomains(events)
+        highValueSales: this.findHighValueSales(validEvents),
+        trendingDomains: this.findTrendingDomains(validEvents),
+        expiredDomains: this.findExpiredDomains(validEvents),
+        newMints: this.findNewMints(validEvents),
+        volumeSpikes: this.findVolumeSpikes(validEvents),
+        rareExtensions: this.findRareExtensions(validEvents),
+        shortDomains: this.findShortDomains(validEvents),
+        brandableDomains: this.findBrandableDomains(validEvents)
       };
 
       return opportunities;
