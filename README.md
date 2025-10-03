@@ -339,5 +339,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 *Building the future of domain investment intelligence*
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/CoxyDo1130?style=social)](https://twitter.com/CoxyDo1130)
+[![Twitter Follow](https://img.shields.io/twitter/follow/gabrielaxyeth?style=social)](https://twitter.com/gabrielaxyeth)
 [![GitHub Stars](https://img.shields.io/github/stars/gabrielantonyxaviour/zorox?style=social)](https://github.com/gabrielantonyxaviour/zorox)
