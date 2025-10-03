@@ -2,7 +2,7 @@
 
 ## 🎯 **Overview**
 
-This guide documents the complete integration of the new Bitquery market data (market cap, total supply, enhanced metadata) into the frontend. The integration provides users with comprehensive token information including financial metrics, supply data, and enhanced metadata.
+This guide documents the complete integration of domain monitoring data into the frontend. The integration provides users with comprehensive domain information including events, analytics, and real-time updates.
 
 ## 🏗️ **What's Been Added**
 
@@ -254,9 +254,9 @@ Use the sorting dropdown to organize tokens by:
 ## 🔄 **Data Flow**
 
 ```
-Bitquery API → Supabase Database → Frontend API → UI Components
+Doma API → Supabase Database → Frontend API → UI Components
      ↓              ↓                ↓            ↓
-Market Data → Enhanced Schema → Trending Coins → Dashboard Cards
+Domain Events → Enhanced Schema → Domain Analytics → Dashboard Cards
 Supply Data → Token Updates → Market Data Tab → Analytics View
 ```
 
@@ -311,7 +311,7 @@ SUPABASE_ANON_SECRET=your_supabase_anon_key
 ### **✅ Improved Analytics**
 - **Enhanced Sorting**: Sort by market cap for financial analysis
 - **Rich Comparisons**: Compare tokens across multiple metrics
-- **Real-time Updates**: Live data from Bitquery integration
+- **Real-time Updates**: Live data from Doma API integration
 
 ## 🏆 **Summary**
 
@@ -321,6 +321,6 @@ The frontend integration provides:
 2. **🎨 Enhanced UI**: New cards, tabs, and sorting options
 3. **📱 Better UX**: Comprehensive token information display
 4. **🔧 Smart Formatting**: Currency, supply, and date formatting
-5. **🔄 Real-time Updates**: Live data from the Bitquery integration
+5. **🔄 Real-time Updates**: Live data from the Doma API integration
 
 **Result**: Users now have access to comprehensive token analytics including financial metrics, supply data, and enhanced metadata directly in the frontend! 🎉

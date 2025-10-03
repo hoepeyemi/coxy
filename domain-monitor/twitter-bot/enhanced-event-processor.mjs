@@ -75,7 +75,7 @@ class EnhancedEventProcessor {
 
   async processExpiredDomains(events) {
     const expiredEvents = events.filter(event => 
-      event.type === this.eventTypes.EXPIRED
+      event.type === this.eventTypes.EXPIRED && this.isValidDomainName(event.name)
     );
 
     const expiredDomains = expiredEvents.map(event => ({
@@ -95,7 +95,7 @@ class EnhancedEventProcessor {
 
   async processDomainSales(events) {
     const salesEvents = events.filter(event => 
-      this.eventTypes.SALES.includes(event.type)
+      this.eventTypes.SALES.includes(event.type) && this.isValidDomainName(event.name)
     );
 
     const sales = salesEvents.map(event => {
@@ -119,7 +119,7 @@ class EnhancedEventProcessor {
 
   async processMarketTrends(events) {
     const trendEvents = events.filter(event => 
-      this.eventTypes.TRENDS.includes(event.type)
+      this.eventTypes.TRENDS.includes(event.type) && this.isValidDomainName(event.name)
     );
 
     // Group by domain and calculate activity
@@ -157,7 +157,7 @@ class EnhancedEventProcessor {
 
   async processDomainListings(events) {
     const listingEvents = events.filter(event => 
-      this.eventTypes.LISTINGS.includes(event.type)
+      this.eventTypes.LISTINGS.includes(event.type) && this.isValidDomainName(event.name)
     );
 
     return listingEvents.map(event => {
@@ -443,6 +443,43 @@ class EnhancedEventProcessor {
       activityLevel: totalEvents > 50 ? 'high' : totalEvents > 20 ? 'medium' : 'low',
       trend: 'growing' // This would be calculated based on historical data
     };
+  }
+
+  // Domain name validation to filter out event IDs
+  isValidDomainName(name) {
+    if (!name || typeof name !== 'string') {
+      return false;
+    }
+
+    // Skip if it looks like an event ID (starts with "Event-" or is just a number)
+    if (name.startsWith('Event-') || /^\d+$/.test(name)) {
+      return false;
+    }
+
+    // Check if it's a valid domain name format
+    // Must contain at least one dot and valid characters
+    const domainRegex = /^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*$/;
+    
+    if (!domainRegex.test(name)) {
+      return false;
+    }
+
+    // Must have at least one dot (TLD)
+    if (!name.includes('.')) {
+      return false;
+    }
+
+    // Must not be too long (max 253 characters for full domain)
+    if (name.length > 253) {
+      return false;
+    }
+
+    // Must not start or end with hyphen
+    if (name.startsWith('-') || name.endsWith('-')) {
+      return false;
+    }
+
+    return true;
   }
 }
 

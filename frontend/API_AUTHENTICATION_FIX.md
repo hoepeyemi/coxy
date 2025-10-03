@@ -9,7 +9,7 @@ Error processing request: AxiosError: Request failed with status code 401
 Authorization: 'Bearer undefined'
 ```
 
-**Root Cause**: The frontend API route is missing required environment variables for Bitquery API authentication, causing 401 Unauthorized errors.
+**Root Cause**: The frontend API route is missing required environment variables for Doma API authentication, causing 401 Unauthorized errors.
 
 ## ✅ **Fix Applied**
 
@@ -20,7 +20,7 @@ Authorization: 'Bearer undefined'
 **Before (❌ No validation)**:
 ```typescript
 headers: {
-  "X-API-KEY": process.env.BITQUERY_API_KEY,        // ❌ undefined
+  "X-API-KEY": process.env.DOMA_API_KEY,        // ❌ undefined
   Authorization: "Bearer " + process.env.ACCESS_TOKEN, // ❌ undefined
 }
 ```
@@ -28,16 +28,16 @@ headers: {
 **After (✅ With validation)**:
 ```typescript
 // Validate required environment variables
-const BITQUERY_API_KEY = process.env.BITQUERY_API_KEY;
+const DOMA_API_KEY = process.env.DOMA_API_KEY;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
-if (!BITQUERY_API_KEY || !ACCESS_TOKEN) {
-  console.warn("⚠️ Missing Bitquery API credentials");
+if (!DOMA_API_KEY || !ACCESS_TOKEN) {
+  console.warn("⚠️ Missing Doma API credentials");
   console.warn("   Price updates will be limited to existing data only");
 }
 
 // Check credentials before making API calls
-if (!BITQUERY_API_KEY || !ACCESS_TOKEN) {
+if (!DOMA_API_KEY || !ACCESS_TOKEN) {
   return NextResponse.json({ 
     success: true, 
     data: [],
@@ -69,7 +69,7 @@ return NextResponse.json(
 ```typescript
 if (error.message.includes("401")) {
   return NextResponse.json(
-    { error: "API authentication failed - check Bitquery credentials" },
+    { error: "API authentication failed - check Doma API credentials" },
     { status: 401 }
   );
 }
@@ -95,9 +95,9 @@ Copy this template to `.env.local`:
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
 
-# Bitquery API Configuration (for price updates)
-BITQUERY_API_KEY=your_bitquery_api_key_here
-ACCESS_TOKEN=your_bitquery_access_token_here
+# Doma API Configuration (for domain events)
+DOMA_API_KEY=your_doma_api_key_here
+ACCESS_TOKEN=your_doma_access_token_here
 
 # Environment
 NODE_ENV=development
@@ -105,15 +105,15 @@ NODE_ENV=development
 
 ### **Step 3: Get Your API Keys**
 
-#### **Bitquery API Key**:
-1. Go to [Bitquery](https://bitquery.io/)
+#### **Doma API Key**:
+1. Go to [Doma](https://doma.io/)
 2. Sign up/Login to your account
 3. Navigate to API Keys section
 4. Generate a new API key
-5. Copy the key to `BITQUERY_API_KEY`
+5. Copy the key to `DOMA_API_KEY`
 
 #### **Access Token**:
-1. In your Bitquery account
+1. In your Doma account
 2. Look for "Access Token" or "Bearer Token"
 3. Copy the token to `ACCESS_TOKEN`
 
@@ -132,8 +132,8 @@ npm run dev
 The API will now log the status of your credentials:
 
 ```
-⚠️ Missing Bitquery API credentials:
-   BITQUERY_API_KEY: ❌ Missing
+⚠️ Missing Doma API credentials:
+   DOMA_API_KEY: ❌ Missing
    ACCESS_TOKEN: ❌ Missing
    Price updates will be limited to existing data only
 ```
@@ -215,16 +215,16 @@ npm run dev
 #### **2. Still Getting 401 Errors**
 ```bash
 # Check environment variable values
-echo $BITQUERY_API_KEY
+echo $DOMA_API_KEY
 echo $ACCESS_TOKEN
 
 # Verify in .env.local file
-grep BITQUERY_API_KEY frontend/.env.local
+grep DOMA_API_KEY frontend/.env.local
 grep ACCESS_TOKEN frontend/.env.local
 ```
 
 #### **3. API Key Invalid**
-- Verify your Bitquery API key is active
+- Verify your Doma API key is active
 - Check if you have sufficient API credits
 - Ensure the key has the required permissions
 
@@ -250,5 +250,5 @@ Your price update system will now work reliably whether you have the external AP
 ## 📚 **Additional Resources**
 
 - [Next.js Environment Variables](https://nextjs.org/docs/basic-features/environment-variables)
-- [Bitquery API Documentation](https://docs.bitquery.io/docs/category/authorization)
+- [Doma API Documentation](https://docs.doma.io/)
 - [Environment Variables Best Practices](https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables)

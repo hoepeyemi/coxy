@@ -1,12 +1,10 @@
 # AGENTS.md - Coxy Development Guide
 
 ## Architecture
-Coxy is a market intelligence platform with multi-component architecture:
+Coxy is a domain intelligence platform with multi-component architecture:
 - `frontend/` - Next.js app with ShadCN/UI, TypeScript, TailwindCSS, Solana wallet integration
-- `scraper/` - Python web scraper using Selenium for market data collection  
-- `js-scraper/` - Node.js Puppeteer scraper for alternative market data scraping
-- `twitter/` - Node.js bot for automated Twitter posting using twitter-api-v2
-- `bitquery/` - Node.js Solana blockchain data fetcher with Web3.js integration
+- `domain-monitor/` - Node.js service for monitoring domain events using Doma API
+- `domain-monitor/twitter-bot/` - Node.js bot for automated Twitter posting using twitter-api-v2
 - Database: Supabase for data storage and API
 
 ## Commands

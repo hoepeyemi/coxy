@@ -49,8 +49,9 @@ class OpportunityAnalyzer {
 
   findHighValueSales(events) {
     const sales = events.filter(event => 
-      event.type === 'NAME_TOKEN_SOLD' || 
-      event.type === 'NAME_TOKEN_TRANSFERRED'
+      (event.type === 'NAME_TOKEN_SOLD' || 
+       event.type === 'NAME_TOKEN_TRANSFERRED') &&
+      this.isValidDomainName(event.name)
     );
 
     return sales
@@ -69,16 +70,18 @@ class OpportunityAnalyzer {
     const domainActivity = {};
     
     events.forEach(event => {
-      if (!domainActivity[event.name]) {
-        domainActivity[event.name] = {
-          count: 0,
-          events: [],
-          types: new Set()
-        };
+      if (this.isValidDomainName(event.name)) {
+        if (!domainActivity[event.name]) {
+          domainActivity[event.name] = {
+            count: 0,
+            events: [],
+            types: new Set()
+          };
+        }
+        domainActivity[event.name].count++;
+        domainActivity[event.name].events.push(event);
+        domainActivity[event.name].types.add(event.type);
       }
-      domainActivity[event.name].count++;
-      domainActivity[event.name].events.push(event);
-      domainActivity[event.name].types.add(event.type);
     });
 
     return Object.entries(domainActivity)
@@ -95,7 +98,7 @@ class OpportunityAnalyzer {
 
   findExpiredDomains(events) {
     return events
-      .filter(event => event.type === 'NAME_TOKEN_BURNED')
+      .filter(event => event.type === 'NAME_TOKEN_BURNED' && this.isValidDomainName(event.name))
       .map(event => ({
         domain: event.name,
         type: 'expired',
@@ -107,7 +110,7 @@ class OpportunityAnalyzer {
 
   findNewMints(events) {
     return events
-      .filter(event => event.type === 'NAME_TOKEN_MINTED')
+      .filter(event => event.type === 'NAME_TOKEN_MINTED' && this.isValidDomainName(event.name))
       .map(event => ({
         domain: event.name,
         type: 'new_mint',
@@ -166,7 +169,7 @@ class OpportunityAnalyzer {
 
   findShortDomains(events) {
     return events
-      .filter(event => event.name.length <= 6 && event.name.includes('.'))
+      .filter(event => this.isValidDomainName(event.name) && event.name.length <= 6 && event.name.includes('.'))
       .map(event => ({
         domain: event.name,
         length: event.name.length,
@@ -179,7 +182,7 @@ class OpportunityAnalyzer {
 
   findBrandableDomains(events) {
     return events
-      .filter(event => this.isBrandable(event.name))
+      .filter(event => this.isValidDomainName(event.name) && this.isBrandable(event.name))
       .map(event => ({
         domain: event.name,
         type: event.type,
@@ -261,6 +264,43 @@ class OpportunityAnalyzer {
     return null;
   }
 
+  // Domain name validation to filter out event IDs
+  isValidDomainName(name) {
+    if (!name || typeof name !== 'string') {
+      return false;
+    }
+
+    // Skip if it looks like an event ID (starts with "Event-" or is just a number)
+    if (name.startsWith('Event-') || /^\d+$/.test(name)) {
+      return false;
+    }
+
+    // Check if it's a valid domain name format
+    // Must contain at least one dot and valid characters
+    const domainRegex = /^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*$/;
+    
+    if (!domainRegex.test(name)) {
+      return false;
+    }
+
+    // Must have at least one dot (TLD)
+    if (!name.includes('.')) {
+      return false;
+    }
+
+    // Must not be too long (max 253 characters for full domain)
+    if (name.length > 253) {
+      return false;
+    }
+
+    // Must not start or end with hyphen
+    if (name.startsWith('-') || name.endsWith('-')) {
+      return false;
+    }
+
+    return true;
+  }
+
   async getTopOpportunities(limit = 10) {
     const opportunities = await this.analyzeOpportunities();
     
@@ -273,6 +313,11 @@ class OpportunityAnalyzer {
       ...opportunities.brandableDomains.map(opp => ({ ...opp, category: 'brandable' }))
     ];
 
+    // Filter out opportunities with invalid domain names
+    const validOpportunities = allOpportunities.filter(opp => 
+      opp.domain && this.isValidDomainName(opp.domain)
+    );
+
     // Sort by priority (high value first, then trending, etc.)
     const priorityOrder = {
       'high_value': 1,
@@ -283,7 +328,7 @@ class OpportunityAnalyzer {
       'brandable': 6
     };
 
-    return allOpportunities
+    return validOpportunities
       .sort((a, b) => {
         const priorityA = priorityOrder[a.category] || 999;
         const priorityB = priorityOrder[b.category] || 999;

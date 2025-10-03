@@ -15,7 +15,7 @@ Error fetching tokens: {
 ### **2. Missing Market Cap Data**
 - **Problem**: No market cap information available for tokens
 - **Impact**: Limited financial analysis capabilities
-- **Solution**: Fetch and store market cap from Bitquery API
+- **Solution**: Fetch and store market cap from Doma API
 
 ### **3. Missing Token URI in Prices**
 - **Problem**: Prices table doesn't have direct token_uri reference
@@ -48,9 +48,9 @@ token_uri TEXT,
 timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 ```
 
-### **2. Bitquery API Enhancement**
+### **2. Doma API Enhancement**
 
-**File**: `bitquery/scripts/prices.mjs`
+**File**: `domain-monitor/scripts/prices.mjs`
 
 **Enhanced Query**:
 ```graphql
@@ -85,7 +85,7 @@ Currency {
 
 ### **3. Enhanced Data Storage**
 
-**File**: `bitquery/scripts/supabase/prices.mjs`
+**File**: `domain-monitor/scripts/supabase/prices.mjs`
 
 **New Data Fields**:
 ```javascript
@@ -158,11 +158,11 @@ npm run add-missing-columns
 🎉 Database migration completed successfully!
 ```
 
-### **Step 2: Update Bitquery Scripts**
+### **Step 2: Update Domain Monitor Scripts**
 
-The Bitquery scripts have been updated to:
-- **Fetch market cap data** from the API
-- **Store additional token metadata** in the database
+The domain monitor scripts have been updated to:
+- **Fetch domain event data** from the Doma API
+- **Store additional domain metadata** in the database
 - **Update token records** with latest information
 
 ### **Step 3: Restart Services**
@@ -171,9 +171,9 @@ The Bitquery scripts have been updated to:
 # Restart your development server
 npm run dev
 
-# Restart Bitquery price fetching (if running)
-cd ../bitquery/scripts
-node prices.mjs
+# Restart domain monitor (if running)
+cd ../domain-monitor
+node index.mjs
 ```
 
 ## 🎯 **Benefits of This Upgrade**
@@ -284,8 +284,8 @@ LIMIT 10;
 
 #### **2. Market Cap Not Populating**
 ```bash
-# Check Bitquery API credentials
-# Verify API response contains MarketCap field
+# Check Doma API credentials
+# Verify API response contains domain event data
 # Check database update logic
 ```
 
@@ -309,7 +309,7 @@ WHERE p.token_uri != t.uri;
 This comprehensive upgrade resolves the database schema issues by:
 
 1. **Adding missing columns**: `market_cap`, `last_updated`, `token_uri`, `timestamp`
-2. **Enhancing Bitquery API**: Fetching market cap and additional metadata
+2. **Enhancing Doma API**: Fetching domain events and additional metadata
 3. **Improving data storage**: Better data relationships and timestamps
 4. **Providing migration tools**: Automated database schema updates
 
@@ -324,6 +324,6 @@ The trending coins API and dashboard are now fully functional with enhanced fina
 ## 📚 **Additional Resources**
 
 - [Supabase Database Schema](https://supabase.com/docs/guides/database/overview)
-- [Bitquery API Documentation](https://docs.bitquery.io/docs/category/solana)
+- [Doma API Documentation](https://docs.doma.io/)
 - [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html)
 - [Database Migration Best Practices](https://supabase.com/docs/guides/database/migrations)

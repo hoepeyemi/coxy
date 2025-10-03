@@ -9,7 +9,7 @@ The Memecoin Pattern Analyzer is a sophisticated system that cross-references so
 ### **1. Cross-Platform Trend Analysis**
 - **TikTok Integration**: Analyzes video content, views, comments, and mentions
 - **Telegram Integration**: Processes channel messages and community sentiment
-- **Token Database**: Cross-references with Pump.fun token launches from bitquery
+- **Token Database**: Cross-references with domain events from Doma API
 
 ### **2. Pattern Matching & Correlation**
 - **Keyword Extraction**: Identifies trending terms from social content
@@ -250,7 +250,7 @@ The pattern analysis system now stores all results in Supabase for real-time acc
 ### **Data Requirements**
 - **TikTok Data**: Must be scraped and stored in database
 - **Telegram Data**: Must be scraped and stored in database
-- **Token Data**: Must be fetched from bitquery and stored
+- **Token Data**: Must be fetched from Doma API and stored
 - **Price Data**: Must be available in prices table
 
 ### **Performance Considerations**

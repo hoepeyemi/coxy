@@ -11,7 +11,7 @@ This document provides a comprehensive overview of what data is stored in your S
 | `telegram_messages` | Telegram message data | Telegram Scraper | Channel_id, message_id, text, date |
 | `mentions` | Token mentions (unified) | Both Scrapers | Token_id, count, source, platform_id |
 | `tokens` | Token information | Manual/API | Name, symbol, address, URI |
-| `prices` | Token price data | Bitquery/API | Price_usd, price_sol, timestamp |
+| `prices` | Token price data | Doma API | Price_usd, price_sol, timestamp |
 | `pattern_analysis_results` | Analysis reports | Pattern Analysis | Analysis_type, platform, summary, correlations |
 | `pattern_correlations` | Correlation details | Pattern Analysis | Keyword, token, correlation_score, risk_level |
 | `trending_keywords` | Keyword tracking | Pattern Analysis | Keyword, platform, frequency, total_mentions |
