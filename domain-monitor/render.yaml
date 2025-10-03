@@ -1,11 +1,10 @@
 services:
   - type: worker
     name: coxy-domain-monitor
-    env: node
+    env: docker
     plan: starter
-    buildCommand: |
-      npm install
-    startCommand: node index.mjs
+    dockerfilePath: domain-monitor/Dockerfile
+    dockerContext: domain-monitor
     envVars:
       - key: NODE_ENV
         value: production
