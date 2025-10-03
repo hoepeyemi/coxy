@@ -200,7 +200,7 @@ The black and white color system automatically adapts to dark mode:
 ```tsx
 <nav className="bg-background border-b border-iris-primary/20">
   <div className="flex items-center space-x-4">
-    <img src="/iris.jpg" alt="Logo" className="w-8 h-8" />
+    <img src="/coxy dora.png" alt="Logo" className="w-8 h-8" />
     <span className="text-iris-primary font-bold">Iris</span>
   </div>
 </nav>

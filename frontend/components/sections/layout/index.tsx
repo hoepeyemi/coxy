@@ -58,7 +58,7 @@ export default function Layout({
           }}
         >
           <Image
-            src="/iris.jpg"
+            src="/coxy dora.png"
             alt="Coxy Logo"
             width={40}
             height={40}

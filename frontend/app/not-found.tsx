@@ -6,14 +6,17 @@ export default function Custom404() {
   const router = useRouter();
   return (
     <div className="w-screen mt-20 flex flex-col items-center justify-center">
-      <Image src={"/lost-2.png"} width={350} height={350} alt={"Zoro"} />
-      <p className="sen mt-4">
-        Since you found me, you should probably be lost.
+      <Image src={"/coxy dora.png"} width={200} height={200} alt={"Coxy Logo"} className="rounded-full" />
+      <p className="sen mt-4 text-xl font-bold text-coxy-primary">
+        Page Not Found
       </p>
-      <p className="sen ">
+      <p className="sen mt-2 text-muted-foreground">
+        The domain you're looking for doesn't exist in our database.
+      </p>
+      <p className="sen mt-4">
         Click&nbsp;
         <span
-          className="underline text-iris-primary font-semibold cursor-pointer hover:scale-105 transform transition"
+          className="underline text-coxy-primary font-semibold cursor-pointer hover:scale-105 transform transition"
           onClick={() => {
             router.push("/");
           }}

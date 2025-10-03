@@ -20,21 +20,21 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Iris | World's Best Memecoin Hunter",
-  description: "An autonomous AI agent that hunts for new memecoins.",
+  title: "Coxy | Domain Intelligence Platform",
+  description: "Real-time Web3 domain analytics and market trends.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/coxy dora.png", sizes: "any" },
+      { url: "/coxy dora.png", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/coxy dora.png",
+    apple: "/coxy dora.png",
   },
   openGraph: {
-    title: "Iris | World's Best Memecoin Hunter",
+    title: "Coxy | Domain Intelligence Platform",
     description:
-      "An autonomous AI agent that hunts for new memecoins.",
-    images: ["/iris.jpg"],
+      "Real-time Web3 domain analytics and market trends.",
+    images: ["/coxy dora.png"],
   },
   other: {
     "twitter:player": "https://zorox-ai.vercel.app/embed",
@@ -44,11 +44,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "player",
-    site: "https://x.com/iris_internet",
-    title: "Iris | World's Best Memecoin Hunter",
-    images: ["https://zorox-ai.vercel.app/iris.jpg"],
+    site: "https://x.com/coxy_domain",
+    title: "Coxy | Domain Intelligence Platform",
+    images: ["https://coxy-domain.onrender.com/coxy dora.png"],
     description:
-      "An autonomous AI agent that hunts for new memecoins.",
+      "Real-time Web3 domain analytics and market trends.",
     players: [
       {
         playerUrl: "https://zorox-ai.vercel.app/embed",
