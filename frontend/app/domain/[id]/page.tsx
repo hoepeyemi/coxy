@@ -16,28 +16,19 @@ interface DomainPageProps {
 
 async function getDomainData(domainId: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/domain_events`, {
-      headers: {
-        'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-      },
+    // Use the existing API route to fetch domain events
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/domain-monitor?action=events&domainName=${encodeURIComponent(domainId)}&limit=100`, {
       next: { revalidate: 30 }
     });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch domain data');
+      throw new Error(`Failed to fetch domain data: ${response.status}`);
     }
 
     const data = await response.json();
+    const domainEvents = data.events || [];
     
-    // Find events related to this domain ID
-    const domainEvents = data.filter((event: any) => 
-      event.domain_name?.includes(domainId) || 
-      event.event_id === domainId ||
-      event.id === domainId
-    );
-
     if (domainEvents.length === 0) {
       return null;
     }
@@ -118,7 +109,7 @@ export default async function DomainPage({ params, searchParams }: DomainPagePro
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                {domain.domain_name || `Event ${id}`}
+                {domain.name || `Event ${id}`}
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300">
                 Domain Intelligence & Analytics
@@ -153,19 +144,19 @@ export default async function DomainPage({ params, searchParams }: DomainPagePro
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm font-medium text-gray-500">Domain Name</p>
-                    <p className="text-lg font-semibold">{domain.domain_name || 'N/A'}</p>
+                    <p className="text-lg font-semibold">{domain.name || 'N/A'}</p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-500">Event Type</p>
-                    <Badge className={getEventTypeColor(domain.event_type)}>
-                      {domain.event_type}
+                    <Badge className={getEventTypeColor(domain.type)}>
+                      {domain.type}
                     </Badge>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-500">Price</p>
                     <p className="text-lg font-semibold flex items-center gap-1">
                       <DollarSign className="w-4 h-4" />
-                      {domain.price ? formatPrice(domain.price) : 'N/A'}
+                      {domain.event_data?.price ? formatPrice(domain.event_data.price) : 'N/A'}
                     </p>
                   </div>
                   <div>
@@ -177,11 +168,11 @@ export default async function DomainPage({ params, searchParams }: DomainPagePro
                   </div>
                 </div>
                 
-                {domain.description && (
+                {domain.event_data?.description && (
                   <div>
                     <p className="text-sm font-medium text-gray-500 mb-2">Description</p>
                     <p className="text-sm text-gray-700 dark:text-gray-300">
-                      {domain.description}
+                      {domain.event_data.description}
                     </p>
                   </div>
                 )}
@@ -204,19 +195,19 @@ export default async function DomainPage({ params, searchParams }: DomainPagePro
                   {events.slice(0, 5).map((event: any, index: number) => (
                     <div key={event.id || index} className="flex items-center justify-between p-3 border rounded-lg">
                       <div className="flex items-center gap-3">
-                        <Badge className={getEventTypeColor(event.event_type)}>
-                          {event.event_type}
+                        <Badge className={getEventTypeColor(event.type)}>
+                          {event.type}
                         </Badge>
                         <div>
-                          <p className="font-medium">{event.domain_name || 'Unknown Domain'}</p>
+                          <p className="font-medium">{event.name || 'Unknown Domain'}</p>
                           <p className="text-sm text-gray-500">
                             {formatDate(event.created_at)}
                           </p>
                         </div>
                       </div>
-                      {event.price && (
+                      {event.event_data?.price && (
                         <p className="font-semibold text-green-600">
-                          {formatPrice(event.price)}
+                          {formatPrice(event.event_data.price)}
                         </p>
                       )}
                     </div>
@@ -262,7 +253,7 @@ export default async function DomainPage({ params, searchParams }: DomainPagePro
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-500">Event Types</span>
                   <span className="font-semibold">
-                    {new Set(events.map((e: any) => e.event_type)).size}
+                    {new Set(events.map((e: any) => e.type)).size}
                   </span>
                 </div>
                 <div className="flex justify-between">
