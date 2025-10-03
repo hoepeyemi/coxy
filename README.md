@@ -97,6 +97,151 @@ coxy/
 - **Containerization**: Docker
 - **CI/CD**: Git-based deployment
 
+## 🔌 **Doma Protocol API Integration**
+
+### **API Usage Overview**
+Coxy leverages the Doma Protocol API to monitor and analyze Web3 domain events in real-time. The integration provides comprehensive domain intelligence by tracking various event types across multiple blockchain networks.
+
+### **Event Types Monitored**
+- **NAME_CLAIMED**: Domain name registration events
+- **NAME_TOKENIZED**: Domain tokenization for trading
+- **NAME_TOKEN_MINTED**: NFT minting for domain ownership
+- **COMMAND_CREATED**: Cross-chain command initiation
+- **COMMAND_UPDATED**: Command status updates
+- **COMMAND_SUCCEEDED**: Successful command completion
+- **TRANSFER**: Domain ownership transfers
+- **LISTING**: Domain marketplace listings
+- **SALE**: Domain sales transactions
+- **OFFER**: Domain purchase offers
+- **EXPIRATION**: Domain expiration events
+- **RENEWAL**: Domain renewal transactions
+- **FRACTIONALIZATION**: Domain fractional ownership
+
+### **Data Collection Process**
+1. **Real-time Polling**: Continuous monitoring of Doma API endpoints
+2. **Event Processing**: Parsing and normalizing event data
+3. **Database Storage**: Storing events in Supabase with metadata
+4. **Analytics Processing**: Real-time trend analysis and opportunity detection
+5. **AI Integration**: Feeding processed data to AI models for insights
+
+### **API Endpoints Utilized**
+- **Events Endpoint**: `/api/events` - Real-time domain event stream
+- **Domain Details**: `/api/domains/{id}` - Individual domain information
+- **Market Data**: `/api/market` - Domain pricing and trading data
+- **Network Status**: `/api/status` - Protocol health and connectivity
+
+### **Data Structure**
+```json
+{
+  "event_id": 401424,
+  "name": "wo7e0ohuyu.com",
+  "type": "NAME_TOKENIZED",
+  "event_data": {
+    "name": "wo7e0ohuyu.com",
+    "txHash": "0xc47c7b008f388fbdd3236fc18b924afde15e34a0b4ce9ff70d56f3deeeaa1858",
+    "claimedBy": "eip155:11155111:0x6aF501eB3baF3d9FF6d412635C43983722e83b7B",
+    "expiresAt": "2026-06-04T19:18:38.000Z",
+    "networkId": "eip155:97476",
+    "blockNumber": "6286450"
+  },
+  "created_at": "2025-10-03T22:28:45.409+00:00"
+}
+```
+
+## 🎯 **Dora Implementation Alignment**
+
+### **Dora Protocol Integration**
+Coxy is designed to align seamlessly with the Dora Protocol ecosystem, providing enhanced domain intelligence and market analysis capabilities that complement Dora's infrastructure.
+
+### **Key Alignment Areas**
+
+#### **1. Domain Event Monitoring**
+- **Real-time Tracking**: Monitors all Dora Protocol domain events
+- **Cross-chain Support**: Tracks events across multiple blockchain networks
+- **Event Classification**: Categorizes events by type and importance
+- **Data Persistence**: Stores historical event data for analysis
+
+#### **2. Market Intelligence**
+- **Price Discovery**: Tracks domain pricing across marketplaces
+- **Trend Analysis**: Identifies emerging domain trends and patterns
+- **Opportunity Detection**: AI-powered identification of investment opportunities
+- **Market Sentiment**: Analyzes social media and trading activity
+
+#### **3. User Experience Enhancement**
+- **Domain Pages**: Individual pages for each domain with detailed information
+- **Marketplace Integration**: Direct links to Dora marketplace for trading
+- **Real-time Updates**: Live data refresh and notifications
+- **Mobile Responsive**: Optimized for all device types
+
+#### **4. Developer Ecosystem**
+- **API Access**: RESTful APIs for external integrations
+- **Webhook Support**: Real-time event notifications
+- **Documentation**: Comprehensive API documentation
+- **SDK Compatibility**: Works with existing Dora SDKs
+
+### **Technical Integration Points**
+
+#### **Database Schema Alignment**
+```sql
+-- Domain Events Table
+CREATE TABLE domain_events (
+  id SERIAL PRIMARY KEY,
+  event_id BIGINT UNIQUE NOT NULL,
+  name TEXT,
+  type TEXT NOT NULL,
+  event_data JSONB,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Analytics Table
+CREATE TABLE domain_analytics (
+  id SERIAL PRIMARY KEY,
+  domain_name TEXT,
+  event_count INTEGER,
+  last_event_at TIMESTAMP,
+  trend_score DECIMAL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+```
+
+#### **API Compatibility**
+- **RESTful Design**: Follows REST principles for easy integration
+- **JSON Responses**: Standardized JSON format for all responses
+- **Error Handling**: Comprehensive error codes and messages
+- **Rate Limiting**: Built-in rate limiting for API protection
+
+#### **Real-time Features**
+- **WebSocket Support**: Real-time event streaming
+- **Push Notifications**: Instant alerts for important events
+- **Live Updates**: Automatic UI updates without page refresh
+- **Event Filtering**: Customizable event type filtering
+
+### **Value Proposition for Dora Ecosystem**
+
+#### **For Domain Investors**
+- **Market Insights**: Comprehensive domain market analysis
+- **Opportunity Alerts**: Real-time notifications for profitable domains
+- **Price Tracking**: Historical and current domain pricing
+- **Trend Analysis**: Identify emerging domain trends
+
+#### **For Developers**
+- **API Access**: Easy integration with existing applications
+- **Documentation**: Comprehensive technical documentation
+- **SDK Support**: Compatible with popular development frameworks
+- **Webhook Integration**: Real-time event notifications
+
+#### **For Domain Registrars**
+- **Analytics Dashboard**: Detailed domain performance metrics
+- **User Behavior**: Understanding of domain usage patterns
+- **Market Trends**: Insights into domain market dynamics
+- **Revenue Optimization**: Data-driven pricing strategies
+
+### **Future Enhancements**
+- **Multi-chain Support**: Extended support for additional blockchain networks
+- **Advanced Analytics**: Machine learning-powered market predictions
+- **Social Features**: Community-driven domain recommendations
+- **Mobile App**: Native mobile application for on-the-go access
+
 ## 🚀 **Quick Start**
 
 ### **Prerequisites**
