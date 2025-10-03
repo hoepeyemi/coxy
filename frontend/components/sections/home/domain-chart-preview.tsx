@@ -265,15 +265,15 @@ export default function DomainChartPreview() {
 
         {/* Text Section */}
         <div className="flex-1 order-1 lg:order-2 lg:max-w-[70%] mx-auto lg:mx-0 mb-4 sm:mb-6 lg:mb-8">
-          <p className="font-bold nouns tracking-widest text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-coxy-primary mt-4 sm:mt-6 lg:mt-8 xl:mt-12 text-center lg:text-right">
+          {/* <p className="font-bold nouns tracking-widest text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-coxy-primary mt-4 sm:mt-6 lg:mt-8 xl:mt-12 text-center lg:text-right">
             Track Domain Trends with <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>Real-time Analytics
-          </p>
-          <p className="sen text-muted-foreground font-semibold lg:w-[90%] xl:w-[80%] lg:ml-auto mt-2 sm:mt-3 md:mt-4 mb-4 text-xs sm:text-sm md:text-base lg:text-lg text-center lg:text-right px-2 lg:px-0">
+          </p> */}
+          {/* <p className="sen text-muted-foreground font-semibold lg:w-[90%] xl:w-[80%] lg:ml-auto mt-2 sm:mt-3 md:mt-4 mb-4 text-xs sm:text-sm md:text-base lg:text-lg text-center lg:text-right px-2 lg:px-0">
             Monitor Web3 domain events, price movements, and market trends in real-time. 
             Our analytics track domain activity, trading volume, and emerging opportunities, 
             helping you discover valuable domains before they become mainstream.
-          </p>
+          </p> */}
           
           {/* Refresh Button */}
           <div className="flex justify-center lg:justify-end">
