@@ -345,3 +345,4 @@ ORDER BY config_key;
 -- Default configuration has been inserted.
 -- You can now run the Twitter bot with: npm start
 -- =====================================================
+

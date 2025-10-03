@@ -471,3 +471,4 @@ class SubscriptionManager {
 }
 
 export default SubscriptionManager;
+

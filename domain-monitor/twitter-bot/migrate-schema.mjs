@@ -323,3 +323,4 @@ class SchemaMigration {
 // Run migration
 const migration = new SchemaMigration();
 migration.migrate().catch(console.error);
+

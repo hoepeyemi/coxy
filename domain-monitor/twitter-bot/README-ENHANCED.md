@@ -319,3 +319,4 @@ For issues and questions:
 **Built with ❤️ by the Coxy Team**
 
 *Automating domain investment intelligence for the Web3 ecosystem*
+

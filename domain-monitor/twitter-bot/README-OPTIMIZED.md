@@ -298,3 +298,4 @@ npm start
 **Built with ❤️ by the Coxy Team**
 
 *Optimizing domain investment intelligence for the Web3 ecosystem*
+

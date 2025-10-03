@@ -250,3 +250,4 @@ MAX_TWEETS_PER_DAY=20
 // Run setup
 const setup = new TwitterBotSetup();
 setup.setup().catch(console.error);
+

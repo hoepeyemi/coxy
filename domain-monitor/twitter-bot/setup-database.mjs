@@ -165,3 +165,4 @@ class DatabaseSetup {
 // Run setup
 const setup = new DatabaseSetup();
 setup.setup().catch(console.error);
+
