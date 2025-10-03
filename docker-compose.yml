@@ -1,25 +1,74 @@
 version: '3.8'
+
 services:
-  eduworld-backend:
-    container_name: coxy
+  frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
-    image: ${DOCKER_USERNAME}/coxy:latest
-    restart: always
     ports:
-      - "8080:8080"
-    env_file:
-      - ./frontend/.env  # This line specifies to use the .env file from the backend directory
-  #    - ./.env 
+      - "3000:3000"
     environment:
       - NODE_ENV=production
-    volumes:
-      - ./frontend:/usr/src/app
-      - /usr/src/app/node_modules
-    networks:
-      - app-network
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - DOMA_API_KEY=${DOMA_API_KEY}
+    depends_on:
+      - domain-monitor
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  domain-monitor:
+    build:
+      context: ./domain-monitor
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - DOMA_API_KEY=${DOMA_API_KEY}
+      - POLL_INTERVAL=${POLL_INTERVAL:-30000}
+      - BATCH_SIZE=${BATCH_SIZE:-100}
+      - MAX_RETRIES=${MAX_RETRIES:-3}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "console.log('Domain monitor health check')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  twitter-bot:
+    build:
+      context: ./domain-monitor/twitter-bot
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - TWITTER_API_KEY=${TWITTER_API_KEY}
+      - TWITTER_API_SECRET=${TWITTER_API_SECRET}
+      - TWITTER_ACCESS_TOKEN=${TWITTER_ACCESS_TOKEN}
+      - TWITTER_ACCESS_TOKEN_SECRET=${TWITTER_ACCESS_TOKEN_SECRET}
+      - TWITTER_BEARER_TOKEN=${TWITTER_BEARER_TOKEN}
+      - MAX_TWEETS_PER_DAY=${MAX_TWEETS_PER_DAY:-20}
+      - TWEET_INTERVAL=${TWEET_INTERVAL:-3600000}
+    depends_on:
+      - domain-monitor
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "console.log('Twitter bot health check')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 networks:
-  app-network:
-    driver: bridge
+  default:
+    name: coxy-network
