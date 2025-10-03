@@ -28,6 +28,7 @@ FROM node:20-alpine AS base
 # Includes standalone output for production
 # Optimized for Render deployment
 # Node 20 required for Solana packages
+# Python & build tools for native module compilation
 ```
 
 ### **Domain Monitor Dockerfile** (`domain-monitor/Dockerfile`)
@@ -37,6 +38,7 @@ FROM node:20-alpine
 # System dependencies for web scraping
 # Optimized for background processing
 # Node 20 required for Solana packages
+# Python & build tools for native module compilation
 ```
 
 ### **Twitter Bot Dockerfile** (`domain-monitor/twitter-bot/Dockerfile`)
@@ -46,6 +48,7 @@ FROM node:20-alpine
 # Twitter API integration
 # Background worker configuration
 # Node 20 required for Solana packages
+# Python & build tools for native module compilation
 ```
 
 ## 🚀 Step-by-Step Docker Deployment
