@@ -19,7 +19,6 @@ const nextConfig = {
 
   outputFileTracingIncludes: {
     '*': [
-      './node_modules/@solana/web3.js/**/*',
       './node_modules/@noble/ed25519/**/*',
       './node_modules/@noble/secp256k1/**/*',
       './node_modules/canvas/**/*',

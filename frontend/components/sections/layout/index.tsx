@@ -1,7 +1,5 @@
 "use client";
 
-import { useWallet } from "@solana/wallet-adapter-react";
-import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -9,7 +7,6 @@ import { useEnvironmentStore } from "@/components/context";
 import CommandMenu from "./command-menu";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { shortenAddress } from "@/lib/utils";
 // import getSub from "@/lib/supabase/getSub";
 import { useToast } from "@/hooks/use-toast";
 
@@ -18,10 +15,7 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { setVisible } = useWalletModal();
-  const { disconnect, connected, publicKey } = useWallet();
-  const { walletAddress, setPaid, setBalances } =
-    useEnvironmentStore((store) => store);
+  const { setPaid } = useEnvironmentStore((store) => store);
   const router = useRouter();
   const { } = useToast();
   const [isClient, setIsClient] = useState(false);
@@ -30,24 +24,6 @@ export default function Layout({
     // Mark that we're on the client side
     setIsClient(true);
   }, []);
-
-  useEffect(() => {
-    // Only make API calls after we're on the client side
-    if (!isClient) return;
-
-    if (walletAddress.length > 0) {
-      fetch(`/api/supabase/get-sub?address=${walletAddress}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("EXPIRES");
-          console.log(data.expires);
-          if (data.expires) {
-            if (new Date().getTime() <= data.expires) setPaid(true);
-          }
-        });
-      // Balance fetching removed - no longer needed
-    }
-  }, [walletAddress, isClient, setPaid, setBalances]);
   return (
     <div className="w-full py-4 sm:py-6">
       <div className="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 space-y-4 sm:space-y-0">
@@ -111,26 +87,6 @@ export default function Layout({
             />
           </Button>
 
-          <Button
-            className="bg-iris-primary hover:bg-iris-primary/80 transform transition hover:scale-105"
-            onClick={() => {
-              if (!connected) setVisible(true);
-              else disconnect();
-            }}
-          >
-            <Image
-              src={"/solana.png"}
-              width={25}
-              height={25}
-              className="rounded-full"
-              alt="phantom"
-            />
-            <p className="sen text-sm sm:text-md font-bold">
-              {!connected
-                ? "Connect Wallet"
-                : shortenAddress(publicKey?.toString() ?? "")}
-            </p>
-          </Button>
         </div>
       </div>
       <div className="flex md:hidden mt-4 justify-center md:justify-start ">
@@ -166,26 +122,6 @@ export default function Layout({
           />
         </Button>
 
-        <Button
-          className="bg-iris-primary hover:bg-iris-primary/80 transform transition hover:scale-105"
-          onClick={() => {
-            if (!connected) setVisible(true);
-            else disconnect();
-          }}
-        >
-          <Image
-            src={"/solana.png"}
-            width={25}
-            height={25}
-            className="rounded-full"
-            alt="phantom"
-          />
-          <p className="sen text-sm sm:text-md font-bold">
-            {!connected
-              ? "Connect Wallet"
-              : shortenAddress(publicKey?.toString() ?? "")}
-          </p>
-        </Button>
       </div>
 
       <div className="w-full max-w-full overflow-x-hidden">{children}</div>

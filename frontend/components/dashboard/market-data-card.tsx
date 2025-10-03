@@ -15,7 +15,6 @@ interface MarketDataCardProps {
     last_updated?: string;
     decimals?: number;
     latest_price_usd?: number;
-    latest_price_sol?: number;
   };
 }
 
@@ -106,8 +105,8 @@ export default function MarketDataCard({ token }: MarketDataCardProps) {
         )}
 
         {/* Price Information */}
-        {(token.latest_price_usd || token.latest_price_sol) && (
-          <div className="grid grid-cols-2 gap-3">
+        {token.latest_price_usd && (
+          <div className="grid grid-cols-1 gap-3">
             {token.latest_price_usd && (
               <div className="p-3 bg-muted/50 rounded-lg">
                 <div className="flex items-center gap-2 mb-1">
@@ -116,17 +115,6 @@ export default function MarketDataCard({ token }: MarketDataCardProps) {
                 </div>
                 <span className="text-sm font-bold text-green-600">
                   {formatCurrency(token.latest_price_usd)}
-                </span>
-              </div>
-            )}
-            {token.latest_price_sol && (
-              <div className="p-3 bg-muted/50 rounded-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  <Hash className="h-3 w-3 text-purple-600" />
-                  <span className="text-xs font-medium">SOL Price</span>
-                </div>
-                <span className="text-sm font-bold text-purple-600">
-                  {token.latest_price_sol.toFixed(6)} SOL
                 </span>
               </div>
             )}

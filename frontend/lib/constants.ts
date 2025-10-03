@@ -1,16 +1,5 @@
 import { DocsConfig } from "./types";
 
-import {
-
-  PhantomWalletAdapter,
-
-  SolflareWalletAdapter,
-
-} from "@solana/wallet-adapter-wallets";
-
-const TEST_BONK_TOKEN_MINT_ADDRESS =
-
-  "J5xh6VWTmNmgVmhgGqEd6fgzZunt2hPqLmiXB85C5Wna";
 
 
 
@@ -1608,9 +1597,7 @@ const docsConfig: DocsConfig = {
 
 };
 
-const ZOROX_TREASURY_ADDRESS = "DUAqcapjRqWzkrC3TmA5Me9LnW4RxUdiuHiaqpL4XJEt";
 
-const wallets = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];
 
 export {
 
@@ -1622,9 +1609,6 @@ export {
 
   docsConfig,
 
-  TEST_BONK_TOKEN_MINT_ADDRESS,
-
-  ZOROX_TREASURY_ADDRESS,
 
   IPFS_GATEWAY_URL,
 
@@ -1634,6 +1618,5 @@ export {
 
   IPFS_GATEWAY_URL_4,
 
-  wallets,
 
 };

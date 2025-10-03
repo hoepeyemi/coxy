@@ -62,10 +62,9 @@ Coxy is a comprehensive market intelligence platform that combines:
 - **Custom dashboards** for different user types
 
 ### **🔗 Blockchain Integration**
-- **Solana wallet** connection and authentication
-- **Web3.js integration** for blockchain interactions
-- **Token data** fetching and analysis
 - **Market data** scraping from multiple sources
+- **Real-time analytics** and trend detection
+- **AI-powered insights** and recommendations
 
 ## 📁 **Project Structure**
 
@@ -104,7 +103,7 @@ coxy/
 - **Styling**: TailwindCSS + ShadCN/UI
 - **State Management**: Zustand
 - **Charts**: Recharts + Lightweight Charts
-- **Blockchain**: Solana Web3.js + Wallet Adapters
+- **Blockchain**: Web3 data integration
 
 ### **Backend Services**
 - **Runtime**: Node.js with ES Modules
@@ -324,7 +323,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Doma Protocol** for domain event data
 - **Supabase** for database and real-time features
 - **OpenAI** for AI-powered content generation
-- **Solana** for blockchain integration
 - **Next.js** and **React** for the frontend framework
 
 ## 🔗 **Links**
