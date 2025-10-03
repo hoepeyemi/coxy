@@ -1,5 +1,5 @@
 # Twitter Bot Dockerfile for Render deployment
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /app
