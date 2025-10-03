@@ -189,7 +189,7 @@ class DomainTwitterBot {
       const context = this.buildOpportunityContext(topOpportunity, opportunities);
       
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
@@ -279,7 +279,7 @@ Key guidelines:
       const prompt = this.buildPrompt(opportunities);
       
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
@@ -411,7 +411,7 @@ Key guidelines:
       Make it engaging and informative for domain investors! Include insights and predictions.`;
 
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
@@ -537,7 +537,7 @@ Key guidelines:
       Make it engaging and informative for domain investors!`;
 
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",

@@ -265,7 +265,7 @@ class CoxyOptimizedBot {
       const context = this.buildOptimizedContext(opportunity, analytics);
       
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
@@ -520,7 +520,7 @@ Key guidelines:
       Make it engaging and informative for domain investors! Include insights and predictions.`;
 
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
@@ -585,7 +585,7 @@ Key guidelines:
       Make it engaging and informative for domain investors! Include insights and predictions.`;
 
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",

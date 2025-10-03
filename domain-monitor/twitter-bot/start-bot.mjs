@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
       service: 'coxy-twitter-bot',
       timestamp: new Date().toISOString(),
       uptime: process.uptime(),
-      botStatus: bot ? bot.getStatus() : { isRunning: false }
+      botStatus: bot && typeof bot.getBotStatus === 'function' ? bot.getBotStatus() : { isRunning: false }
     }));
     return;
   }
@@ -71,7 +71,7 @@ const server = http.createServer((req, res) => {
         health: '/health',
         status: '/status'
       },
-      botInfo: bot ? bot.getStatus() : { isRunning: false }
+      botInfo: bot && typeof bot.getBotStatus === 'function' ? bot.getBotStatus() : { isRunning: false }
     }));
     return;
   }
@@ -126,6 +126,7 @@ bot.initialize().then(() => {
   console.log('✅ Twitter Bot started successfully');
 }).catch(error => {
   console.error('❌ Failed to start Twitter Bot:', error);
+  console.log('🔄 Bot will retry on next health check...');
   // Don't exit, let the HTTP server keep running
 });
 

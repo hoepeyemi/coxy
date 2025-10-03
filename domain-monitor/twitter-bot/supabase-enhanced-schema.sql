@@ -279,7 +279,7 @@ INSERT INTO twitter_bot_config (config_key, config_value, description) VALUES
 ('tweet_interval_minutes', '30', 'Interval between opportunity tweets in minutes'),
 ('max_tweets_per_day', '20', 'Maximum number of tweets per day'),
 ('bot_status', 'active', 'Current bot status (active/inactive)'),
-('openai_model', 'gpt-4', 'OpenAI model to use for tweet generation'),
+('openai_model', 'gpt-3.5-turbo', 'OpenAI model to use for tweet generation'),
 ('enable_daily_summary', 'true', 'Enable daily summary tweets'),
 ('enable_weekly_analysis', 'true', 'Enable weekly analysis tweets'),
 ('min_opportunity_score', '50', 'Minimum opportunity score to tweet about')
