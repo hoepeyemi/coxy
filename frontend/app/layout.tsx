@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     images: ["/coxy dora.png"],
   },
   other: {
-    "twitter:player": "https://zorox-ai.vercel.app/embed",
+    "twitter:player": "https://coxy.onrender.com/embed",
     "x-frame-options": "ALLOWALL",
     "content-security-policy":
       "frame-ancestors 'self' https://twitter.com https://x.com;",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
       "Real-time Web3 domain analytics and market trends.",
     players: [
       {
-        playerUrl: "https://zorox-ai.vercel.app/embed",
-        streamUrl: "https://zorox-ai.vercel.app/embed",
+        playerUrl: "https://coxy.onrender.com/embed",
+        streamUrl: "https://coxy.onrender.com/embed",
         width: 360,
         height: 560,
       },
