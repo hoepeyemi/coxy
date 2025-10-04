@@ -7,7 +7,7 @@ const DashboardClient = dynamic(() => import('./dashboard-client'), {
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Iris Dashboard</h1>
           <p className="text-muted-foreground">
-          Real-time memecoin analytics and trend monitoring
+          Real-time domain analytics and trend monitoring
           </p>
         </div>
       <div className="text-center py-12">

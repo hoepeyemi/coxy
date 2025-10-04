@@ -26,8 +26,8 @@ async function populateSampleData() {
       },
       {
         id: 'tiktok_002',
-        username: 'memecoin_expert',
-        url: 'https://www.tiktok.com/@memecoin_expert/video/1234567891',
+        username: 'domain_expert',
+        url: 'https://www.tiktok.com/@domain_expert/video/1234567891',
         thumbnail: 'https://example.com/thumbnail2.jpg',
         created_at: new Date('2024-01-15T11:00:00Z').toISOString(),
         fetched_at: new Date().toISOString(),

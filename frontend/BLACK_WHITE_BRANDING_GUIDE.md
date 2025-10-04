@@ -213,7 +213,7 @@ The black and white color system automatically adapts to dark mode:
     Welcome to Iris
   </h1>
   <p className="text-iris-dark text-lg">
-    The ultimate memecoin hunter
+    The ultimate domain hunter
   </p>
   <Button className="bg-iris-primary hover:bg-iris-primary/80 text-white dark:text-black">
     Get Started

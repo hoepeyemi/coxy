@@ -163,7 +163,7 @@ export default function CommandMenu({ ...props }: ButtonProps) {
           </>
         ) : (
           <div className="h-[300px] flex flex-col justify-center">
-            <UnlockNow text="Search and analyze all memecoins" />
+            <UnlockNow text="Search and analyze all domains" />
           </div>
         )}
       </CommandDialog>

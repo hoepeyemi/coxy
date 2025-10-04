@@ -66,7 +66,7 @@ export async function GET(request: NextRequest) {
       start += ITEMS_PER_PAGE;
     }
 
-    const memecoins = results.map((token) => ({
+    const domains = results.map((token) => ({
       id: token.id,
       name: token.name,
       symbol: token.symbol,
@@ -83,7 +83,7 @@ export async function GET(request: NextRequest) {
       mentions: token.mentions,
     }));
 
-    return NextResponse.json(memecoins);
+    return NextResponse.json(domains);
   } catch (error) {
     return NextResponse.json(
       {

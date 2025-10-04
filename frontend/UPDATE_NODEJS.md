@@ -45,7 +45,7 @@ sudo apt install nodejs npm
 ## 🎯 **What You'll Get After Update:**
 
 ✅ **Real-time TikTok feed** with auto-refresh  
-✅ **Live analytics dashboard** with memecoin tracking  
+✅ **Live analytics dashboard** with domain tracking  
 ✅ **Scraper status monitoring** with live indicators  
 ✅ **Beautiful UI components** for data visualization  
 ✅ **Mobile responsive** design for all devices  
@@ -53,7 +53,7 @@ sudo apt install nodejs npm
 ## 📱 **Features Ready to Use:**
 
 - **Real-time data** from your automated scraper
-- **Token mention tracking** for trending memecoins
+- **Token mention tracking** for trending domains
 - **Performance analytics** with live metrics
 - **Professional dashboard** at `/dashboard`
 - **Navigation integration** with live indicators
@@ -76,4 +76,4 @@ sudo apt install nodejs npm
 
 ---
 
-**Your TikTok memecoin platform is 100% ready - just needs the Node.js update! 🚀**
+**Your TikTok domain platform is 100% ready - just needs the Node.js update! 🚀**

@@ -35,7 +35,7 @@ The application uses Tailwind CSS responsive breakpoints:
 ```tsx
 // Responsive typography and spacing
 <p className="meme-title tracking-widest font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-iris-primary mt-4 sm:mt-6 md:mt-12 lg:mt-16 px-4">
-  The Ultimate TikTok & Telegram Memecoin Hunter
+  The Ultimate TikTok & Telegram Domain Hunter
 </p>
 ```
 
@@ -73,7 +73,7 @@ The application uses Tailwind CSS responsive breakpoints:
 // Mobile-first text sizing
 <div className="lg:flex-1 flex flex-col pb-4 lg:pb-8 xl:pb-12 text-center lg:text-left max-w-full lg:max-w-[70%] mx-auto lg:mx-0 px-4 sm:px-6 lg:px-0">
   <p className="font-bold nouns tracking-widest text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black mt-8 sm:mt-12 lg:mt-16 xl:mt-24">
-    Curated Memecoin Feed <br className="hidden sm:block" /> 
+    Curated Domain Feed <br className="hidden sm:block" /> 
     <span className="sm:hidden"> </span>From Tiktok
   </p>
 </div>
@@ -305,4 +305,4 @@ The Iris homepage now provides:
 - **♿ Accessibility**: Touch-friendly and screen-reader compatible
 - **🔄 Smooth Transitions**: Responsive animations and interactions
 
-The mobile-responsive design ensures that users can effectively hunt for memecoins and monitor TikTok/Telegram data regardless of their device! 📱✨
+The mobile-responsive design ensures that users can effectively hunt for domains and monitor TikTok/Telegram data regardless of their device! 📱✨

@@ -247,7 +247,7 @@ The iris color system automatically adapts to dark mode:
     Welcome to Iris
   </h1>
   <p className="text-iris-dark text-lg">
-    The ultimate memecoin hunter
+    The ultimate domain hunter
   </p>
   <Button className="bg-iris-primary hover:bg-iris-primary/80">
     Get Started
@@ -280,4 +280,4 @@ The new iris brand color system provides:
 - **🎨 Visual Hierarchy**: Clear distinction between different element types
 - **🚀 Modern Appeal**: Contemporary color choices that appeal to the crypto community
 
-The iris color system creates a distinctive, professional, and visually appealing brand identity that sets Iris apart in the memecoin space! 🌸✨
+The iris color system creates a distinctive, professional, and visually appealing brand identity that sets Iris apart in the domain space! 🌸✨

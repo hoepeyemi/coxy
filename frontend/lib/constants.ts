@@ -233,7 +233,7 @@ const pumpfunSample = {
 
               "Hantz's comment: $LIL BRO",
 
-              "vis_onlyyy's comment: if anyone wants to trade memecoins, join trojan by my referral.\nping me",
+              "vis_onlyyy's comment: if anyone wants to trade domains, join trojan by my referral.\nping me",
 
               "Rhys Thomas's comment: $KINGJALUCE 🚀 for all of his predictions",
 
@@ -281,7 +281,7 @@ const pumpfunSample = {
 
           description: "",
 
-          hashtags: ["#XRP", "#bitcoin", "#trading", "#crypto", "#memecoin"],
+          hashtags: ["#XRP", "#bitcoin", "#trading", "#crypto", "#domains"],
 
           author: "",
 

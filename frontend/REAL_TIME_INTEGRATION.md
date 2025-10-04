@@ -1,12 +1,12 @@
 # 🚀 Real-Time TikTok Integration
 
-This document describes the complete integration between your automated TikTok scraper and the Next.js frontend for real-time memecoin tracking.
+This document describes the complete integration between your automated TikTok scraper and the Next.js frontend for real-time domain tracking.
 
 ## ✨ **Features Implemented**
 
 ### **1. Real-Time TikTok Feed**
 - **Live video display** with auto-refresh every 30 seconds
-- **Token mention tracking** showing which memecoins are mentioned
+- **Token mention tracking** showing which domains are mentioned
 - **Beautiful card layout** with thumbnails, stats, and engagement metrics
 - **Responsive design** for all device sizes
 
@@ -89,7 +89,7 @@ npm run auto
 
 ### **Real-Time Feed**
 - **Video cards** with thumbnails and stats
-- **Token mention badges** showing referenced memecoins
+- **Token mention badges** showing referenced domains
 - **Engagement metrics** (views, comments)
 - **Direct TikTok links** for each video
 
@@ -132,7 +132,7 @@ SUPABASE_ANON_SECRET=your_supabase_anon_key
 ### **Database Schema**
 Ensure your Supabase database has the tables from `js-scraper/supabase_schema.sql`:
 - `tiktoks` - TikTok video data
-- `tokens` - Memecoin information
+- `tokens` - Domain information
 - `mentions` - Token mentions in videos
 - `prices` - Price data (optional)
 
@@ -183,6 +183,6 @@ Ensure your Supabase database has the tables from `js-scraper/supabase_schema.sq
 
 ---
 
-**Your TikTok memecoin hunting platform is now fully real-time! 🚀**
+**Your TikTok domain hunting platform is now fully real-time! 🚀**
 
 Watch as new videos are scraped and displayed instantly in your beautiful dashboard.

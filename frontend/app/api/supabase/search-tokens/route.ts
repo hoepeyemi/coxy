@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
 
     console.log(`[${requestId}] Tokens fetched:`, data);
 
-    const memecoins = data.map((token) => {
+    const domains = data.map((token) => {
       return {
         id: token.id,
         name: token.name,
@@ -60,8 +60,8 @@ export async function GET(request: NextRequest) {
       };
     });
 
-    console.log(`[${requestId}] Successfully processed memecoins:`, memecoins);
-    return NextResponse.json(memecoins);
+    console.log(`[${requestId}] Successfully processed domains:`, domains);
+    return NextResponse.json(domains);
   } catch (error) {
     console.error(`[${requestId}] Error processing request:`, error);
     return NextResponse.json(
