@@ -1,8 +1,8 @@
-# ⚫⚪ Black & White Branding Guide - Iris
+# ⚫⚪ Black & White Branding Guide - Coxy
 
 ## 🎯 **Brand Transformation Overview**
 
-Iris has been transformed from a colorful iris-inspired theme to a sophisticated black and white color scheme. This creates a clean, modern, and professional aesthetic that emphasizes content and functionality.
+Coxy has been transformed from a colorful Coxy-inspired theme to a sophisticated black and white color scheme. This creates a clean, modern, and professional aesthetic that emphasizes content and functionality.
 
 ## 🎨 **New Color Palette**
 
@@ -10,21 +10,21 @@ Iris has been transformed from a colorful iris-inspired theme to a sophisticated
 
 | Color | HSL Value | Usage | Description |
 |-------|-----------|-------|-------------|
-| **Iris Primary** | `0 0% 0%` | Main brand color, buttons, highlights | Pure Black - Primary brand color |
-| **Iris Secondary** | `0 0% 50%` | Accents, secondary elements | Medium Gray - Secondary accent |
-| **Iris Accent** | `0 0% 20%` | Call-to-actions, special highlights | Dark Gray - Accent color |
-| **Iris Light** | `0 0% 95%` | Backgrounds, subtle elements | Very Light Gray - Backgrounds |
-| **Iris Dark** | `0 0% 10%` | Text, contrast elements | Very Dark Gray - Text/contrast |
+| **Coxy Primary** | `0 0% 0%` | Main brand color, buttons, highlights | Pure Black - Primary brand color |
+| **Coxy Secondary** | `0 0% 50%` | Accents, secondary elements | Medium Gray - Secondary accent |
+| **Coxy Accent** | `0 0% 20%` | Call-to-actions, special highlights | Dark Gray - Accent color |
+| **Coxy Light** | `0 0% 95%` | Backgrounds, subtle elements | Very Light Gray - Backgrounds |
+| **Coxy Dark** | `0 0% 10%` | Text, contrast elements | Very Dark Gray - Text/contrast |
 
 ### **Dark Mode Colors**
 
 | Color | HSL Value | Usage | Description |
 |-------|-----------|-------|-------------|
-| **Iris Primary** | `0 0% 100%` | Main brand color, buttons, highlights | Pure White - Primary brand color |
-| **Iris Secondary** | `0 0% 50%` | Accents, secondary elements | Medium Gray - Secondary accent |
-| **Iris Accent** | `0 0% 80%` | Call-to-actions, special highlights | Light Gray - Accent color |
-| **Iris Light** | `0 0% 5%` | Backgrounds, subtle elements | Very Dark Gray - Dark backgrounds |
-| **Iris Dark** | `0 0% 90%` | Text, contrast elements | Light Gray - Text/contrast |
+| **Coxy Primary** | `0 0% 100%` | Main brand color, buttons, highlights | Pure White - Primary brand color |
+| **Coxy Secondary** | `0 0% 50%` | Accents, secondary elements | Medium Gray - Secondary accent |
+| **Coxy Accent** | `0 0% 80%` | Call-to-actions, special highlights | Light Gray - Accent color |
+| **Coxy Light** | `0 0% 5%` | Backgrounds, subtle elements | Very Dark Gray - Dark backgrounds |
+| **Coxy Dark** | `0 0% 90%` | Text, contrast elements | Light Gray - Text/contrast |
 
 ## 🔧 **Technical Implementation**
 
@@ -35,20 +35,20 @@ All colors are available as CSS custom properties:
 ```css
 :root {
   /* Light Mode */
-  --iris-primary: 0 0% 0%;            /* Pure Black */
-  --iris-secondary: 0 0% 50%;         /* Medium Gray */
-  --iris-accent: 0 0% 20%;            /* Dark Gray */
-  --iris-light: 0 0% 95%;             /* Very Light Gray */
-  --iris-dark: 0 0% 10%;              /* Very Dark Gray */
+  --coxy-primary: 0 0% 0%;            /* Pure Black */
+  --coxy-secondary: 0 0% 50%;         /* Medium Gray */
+  --coxy-accent: 0 0% 20%;            /* Dark Gray */
+  --coxy-light: 0 0% 95%;             /* Very Light Gray */
+  --coxy-dark: 0 0% 10%;              /* Very Dark Gray */
 }
 
 .dark {
   /* Dark Mode */
-  --iris-primary: 0 0% 100%;          /* Pure White */
-  --iris-secondary: 0 0% 50%;         /* Medium Gray */
-  --iris-accent: 0 0% 80%;            /* Light Gray */
-  --iris-light: 0 0% 5%;              /* Very Dark Gray */
-  --iris-dark: 0 0% 90%;              /* Light Gray */
+  --coxy-primary: 0 0% 100%;          /* Pure White */
+  --coxy-secondary: 0 0% 50%;         /* Medium Gray */
+  --coxy-accent: 0 0% 80%;            /* Light Gray */
+  --coxy-light: 0 0% 5%;              /* Very Dark Gray */
+  --coxy-dark: 0 0% 90%;              /* Light Gray */
 }
 ```
 
@@ -92,23 +92,23 @@ Use these Tailwind classes for consistent styling:
 
 ```tsx
 // Text Colors
-<span className="text-iris-primary">Primary Text</span>      // Black (light) / White (dark)
-<span className="text-iris-secondary">Secondary Text</span>  // Medium Gray
-<span className="text-iris-accent">Accent Text</span>        // Dark Gray (light) / Light Gray (dark)
-<span className="text-iris-light">Light Text</span>          // Very Light Gray (light) / Very Dark Gray (dark)
-<span className="text-iris-dark">Dark Text</span>            // Very Dark Gray (light) / Light Gray (dark)
+<span className="text-coxy-primary">Primary Text</span>      // Black (light) / White (dark)
+<span className="text-coxy-secondary">Secondary Text</span>  // Medium Gray
+<span className="text-coxy-accent">Accent Text</span>        // Dark Gray (light) / Light Gray (dark)
+<span className="text-coxy-light">Light Text</span>          // Very Light Gray (light) / Very Dark Gray (dark)
+<span className="text-coxy-dark">Dark Text</span>            // Very Dark Gray (light) / Light Gray (dark)
 
 // Background Colors
-<div className="bg-iris-primary">Primary Background</div>    // Black (light) / White (dark)
-<div className="bg-iris-secondary">Secondary Background</div> // Medium Gray
-<div className="bg-iris-accent">Accent Background</div>      // Dark Gray (light) / Light Gray (dark)
-<div className="bg-iris-light">Light Background</div>        // Very Light Gray (light) / Very Dark Gray (dark)
-<div className="bg-iris-dark">Dark Background</div>          // Very Dark Gray (light) / Light Gray (dark)
+<div className="bg-coxy-primary">Primary Background</div>    // Black (light) / White (dark)
+<div className="bg-coxy-secondary">Secondary Background</div> // Medium Gray
+<div className="bg-coxy-accent">Accent Background</div>      // Dark Gray (light) / Light Gray (dark)
+<div className="bg-coxy-light">Light Background</div>        // Very Light Gray (light) / Very Dark Gray (dark)
+<div className="bg-coxy-dark">Dark Background</div>          // Very Dark Gray (light) / Light Gray (dark)
 
 // Border Colors
-<div className="border-iris-primary">Primary Border</div>    // Black (light) / White (dark)
-<div className="border-iris-secondary">Secondary Border</div> // Medium Gray
-<div className="border-iris-accent">Accent Border</div>      // Dark Gray (light) / Light Gray (dark)
+<div className="border-coxy-primary">Primary Border</div>    // Black (light) / White (dark)
+<div className="border-coxy-secondary">Secondary Border</div> // Medium Gray
+<div className="border-coxy-accent">Accent Border</div>      // Dark Gray (light) / Light Gray (dark)
 ```
 
 ### **Component-Specific Usage**
@@ -116,17 +116,17 @@ Use these Tailwind classes for consistent styling:
 #### **Buttons & CTAs**
 ```tsx
 // Primary Button
-<Button className="bg-iris-primary hover:bg-iris-primary/80 text-white dark:text-black">
+<Button className="bg-coxy-primary hover:bg-coxy-primary/80 text-white dark:text-black">
   Primary Action
 </Button>
 
 // Secondary Button
-<Button variant="outline" className="border-iris-primary text-iris-primary hover:bg-iris-primary/10">
+<Button variant="outline" className="border-coxy-primary text-coxy-primary hover:bg-coxy-primary/10">
   Secondary Action
 </Button>
 
 // Accent Button
-<Button className="bg-iris-accent hover:bg-iris-accent/80 text-white dark:text-black">
+<Button className="bg-coxy-accent hover:bg-coxy-accent/80 text-white dark:text-black">
   Special Action
 </Button>
 ```
@@ -134,16 +134,16 @@ Use these Tailwind classes for consistent styling:
 #### **Cards & Containers**
 ```tsx
 // Primary Card
-<Card className="bg-card border-iris-primary/20">
+<Card className="bg-card border-coxy-primary/20">
   <CardHeader>
-    <CardTitle className="text-iris-primary">Card Title</CardTitle>
+    <CardTitle className="text-coxy-primary">Card Title</CardTitle>
   </CardHeader>
 </Card>
 
 // Accent Card
-<Card className="bg-iris-light border-iris-accent/30">
+<Card className="bg-coxy-light border-coxy-accent/30">
   <CardContent>
-    <p className="text-iris-dark">Card content</p>
+    <p className="text-coxy-dark">Card content</p>
   </CardContent>
 </Card>
 ```
@@ -151,16 +151,16 @@ Use these Tailwind classes for consistent styling:
 #### **Text & Typography**
 ```tsx
 // Main Headings
-<h1 className="text-iris-primary font-bold">Main Title</h1>
+<h1 className="text-coxy-primary font-bold">Main Title</h1>
 
 // Subheadings
-<h2 className="text-iris-secondary font-semibold">Subtitle</h2>
+<h2 className="text-coxy-secondary font-semibold">Subtitle</h2>
 
 // Accent Text
-<span className="text-iris-accent font-medium">Highlighted Text</span>
+<span className="text-coxy-accent font-medium">Highlighted Text</span>
 
 // Body Text
-<p className="text-iris-dark">Regular content text</p>
+<p className="text-coxy-dark">Regular content text</p>
 ```
 
 ## 🌙 **Dark Mode Support**
@@ -198,24 +198,24 @@ The black and white color system automatically adapts to dark mode:
 
 ### **Navigation Bar**
 ```tsx
-<nav className="bg-background border-b border-iris-primary/20">
+<nav className="bg-background border-b border-coxy-primary/20">
   <div className="flex items-center space-x-4">
     <img src="/coxy dora.png" alt="Logo" className="w-8 h-8" />
-    <span className="text-iris-primary font-bold">Iris</span>
+    <span className="text-coxy-primary font-bold">Coxy</span>
   </div>
 </nav>
 ```
 
 ### **Hero Section**
 ```tsx
-<section className="bg-gradient-to-br from-iris-light to-background">
-  <h1 className="text-iris-primary text-4xl font-bold">
-    Welcome to Iris
+<section className="bg-gradient-to-br from-coxy-light to-background">
+  <h1 className="text-coxy-primary text-4xl font-bold">
+    Welcome to Coxy
   </h1>
-  <p className="text-iris-dark text-lg">
+  <p className="text-coxy-dark text-lg">
     The ultimate domain hunter
   </p>
-  <Button className="bg-iris-primary hover:bg-iris-primary/80 text-white dark:text-black">
+  <Button className="bg-coxy-primary hover:bg-coxy-primary/80 text-white dark:text-black">
     Get Started
   </Button>
 </section>
@@ -223,13 +223,13 @@ The black and white color system automatically adapts to dark mode:
 
 ### **Data Cards**
 ```tsx
-<Card className="bg-card border-iris-primary/20 hover:border-iris-primary/50">
+<Card className="bg-card border-coxy-primary/20 hover:border-coxy-primary/50">
   <CardHeader>
-    <CardTitle className="text-iris-primary">📊 Analytics</CardTitle>
+    <CardTitle className="text-coxy-primary">📊 Analytics</CardTitle>
   </CardHeader>
   <CardContent>
-    <div className="text-iris-accent text-2xl font-bold">1,234</div>
-    <p className="text-iris-dark text-sm">Total Users</p>
+    <div className="text-coxy-accent text-2xl font-bold">1,234</div>
+    <p className="text-coxy-dark text-sm">Total Users</p>
   </CardContent>
 </Card>
 ```
@@ -237,11 +237,11 @@ The black and white color system automatically adapts to dark mode:
 ## 🎯 **Best Practices**
 
 ### **✅ Do:**
-- Use `iris-primary` for main brand elements and CTAs
-- Use `iris-secondary` for secondary actions and accents
-- Use `iris-accent` for special highlights and important elements
-- Use `iris-light` for subtle backgrounds and soft elements
-- Use `iris-dark` for high-contrast text and important information
+- Use `coxy-primary` for main brand elements and CTAs
+- Use `coxy-secondary` for secondary actions and accents
+- Use `coxy-accent` for special highlights and important elements
+- Use `coxy-light` for subtle backgrounds and soft elements
+- Use `coxy-dark` for high-contrast text and important information
 - Maintain consistent contrast ratios
 - Test both light and dark modes
 
@@ -262,4 +262,4 @@ The new black and white branding provides:
 - **⏰ Timeless Design**: Classic color scheme that won't date
 - **📱 Universal Appeal**: Works across all devices and contexts
 
-The black and white color system creates a sophisticated, professional, and accessible design that emphasizes content and functionality while maintaining the Iris brand identity! ⚫⚪✨
+The black and white color system creates a sophisticated, professional, and accessible design that emphasizes content and functionality while maintaining the Coxy brand identity! ⚫⚪✨

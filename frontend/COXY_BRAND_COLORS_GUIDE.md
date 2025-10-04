@@ -10,11 +10,11 @@ Coxy now features a beautiful coxy-inspired color palette that reflects the natu
 
 | Color | HSL Value | Usage | Description |
 |-------|-----------|-------|-------------|
-| **Iris Primary** | `270 85% 65%` | Main brand color, buttons, highlights | Deep Purple - The signature brand color |
-| **Iris Secondary** | `240 100% 85%` | Accents, secondary elements | Light Blue - Complementary accent color |
-| **Iris Accent** | `300 75% 70%` | Call-to-actions, special highlights | Magenta - Vibrant accent for emphasis |
-| **Iris Light** | `270 50% 95%` | Backgrounds, subtle elements | Very Light Purple - Soft backgrounds |
-| **Iris Dark** | `270 90% 25%` | Text, contrast elements | Dark Purple - High contrast text |
+| **Coxy Primary** | `270 85% 65%` | Main brand color, buttons, highlights | Deep Purple - The signature brand color |
+| **Coxy Secondary** | `240 100% 85%` | Accents, secondary elements | Light Blue - Complementary accent color |
+| **Coxy Accent** | `300 75% 70%` | Call-to-actions, special highlights | Magenta - Vibrant accent for emphasis |
+| **Coxy Light** | `270 50% 95%` | Backgrounds, subtle elements | Very Light Purple - Soft backgrounds |
+| **Coxy Dark** | `270 90% 25%` | Text, contrast elements | Dark Purple - High contrast text |
 
 ### **Color Relationships**
 
@@ -27,15 +27,15 @@ Coxy now features a beautiful coxy-inspired color palette that reflects the natu
 
 ### **CSS Custom Properties**
 
-All iris colors are available as CSS custom properties:
+All coxy colors are available as CSS custom properties:
 
 ```css
 :root {
-  --iris-primary: 270 85% 65%;        /* Deep Purple */
-  --iris-secondary: 240 100% 85%;     /* Light Blue */
-  --iris-accent: 300 75% 70%;         /* Magenta */
-  --iris-light: 270 50% 95%;          /* Very Light Purple */
-  --iris-dark: 270 90% 25%;           /* Dark Purple */
+  --coxy-primary: 270 85% 65%;        /* Deep Purple */
+  --coxy-secondary: 240 100% 85%;     /* Light Blue */
+  --coxy-accent: 300 75% 70%;         /* Magenta */
+  --coxy-light: 270 50% 95%;          /* Very Light Purple */
+  --coxy-dark: 270 90% 25%;           /* Dark Purple */
 }
 ```
 
@@ -45,23 +45,23 @@ Use these Tailwind classes for consistent styling:
 
 ```tsx
 // Text Colors
-<span className="text-iris-primary">Primary Text</span>
-<span className="text-iris-secondary">Secondary Text</span>
-<span className="text-iris-accent">Accent Text</span>
-<span className="text-iris-light">Light Text</span>
-<span className="text-iris-dark">Dark Text</span>
+<span className="text-coxy-primary">Primary Text</span>
+<span className="text-coxy-secondary">Secondary Text</span>
+<span className="text-coxy-accent">Accent Text</span>
+<span className="text-coxy-light">Light Text</span>
+<span className="text-coxy-dark">Dark Text</span>
 
 // Background Colors
-<div className="bg-iris-primary">Primary Background</div>
-<div className="bg-iris-secondary">Secondary Background</div>
-<div className="bg-iris-accent">Accent Background</div>
-<div className="bg-iris-light">Light Background</div>
-<div className="bg-iris-dark">Dark Background</div>
+<div className="bg-coxy-primary">Primary Background</div>
+<div className="bg-coxy-secondary">Secondary Background</div>
+<div className="bg-coxy-accent">Accent Background</div>
+<div className="bg-coxy-light">Light Background</div>
+<div className="bg-coxy-dark">Dark Background</div>
 
 // Border Colors
-<div className="border-iris-primary">Primary Border</div>
-<div className="border-iris-secondary">Secondary Border</div>
-<div className="border-iris-accent">Accent Border</div>
+<div className="border-coxy-primary">Primary Border</div>
+<div className="border-coxy-secondary">Secondary Border</div>
+<div className="border-coxy-accent">Accent Border</div>
 ```
 
 ### **Custom CSS Utility Classes**
@@ -69,21 +69,21 @@ Use these Tailwind classes for consistent styling:
 Additional utility classes are available:
 
 ```css
-.iris-primary { color: hsl(var(--iris-primary)); }
-.iris-secondary { color: hsl(var(--iris-secondary)); }
-.iris-accent { color: hsl(var(--iris-accent)); }
-.iris-light { color: hsl(var(--iris-light)); }
-.iris-dark { color: hsl(var(--iris-dark)); }
+.coxy-primary { color: hsl(var(--coxy-primary)); }
+.coxy-secondary { color: hsl(var(--coxy-secondary)); }
+.coxy-accent { color: hsl(var(--coxy-accent)); }
+.coxy-light { color: hsl(var(--coxy-light)); }
+.coxy-dark { color: hsl(var(--coxy-dark)); }
 
-.bg-iris-primary { background-color: hsl(var(--iris-primary)); }
-.bg-iris-secondary { background-color: hsl(var(--iris-secondary)); }
-.bg-iris-accent { background-color: hsl(var(--iris-accent)); }
-.bg-iris-light { background-color: hsl(var(--iris-light)); }
-.bg-iris-dark { background-color: hsl(var(--iris-dark)); }
+.bg-coxy-primary { background-color: hsl(var(--coxy-primary)); }
+.bg-coxy-secondary { background-color: hsl(var(--coxy-secondary)); }
+.bg-coxy-accent { background-color: hsl(var(--coxy-accent)); }
+.bg-coxy-light { background-color: hsl(var(--coxy-light)); }
+.bg-coxy-dark { background-color: hsl(var(--coxy-dark)); }
 
-.border-iris-primary { border-color: hsl(var(--iris-primary)); }
-.border-iris-secondary { border-color: hsl(var(--iris-secondary)); }
-.border-iris-accent { border-color: hsl(var(--iris-accent)); }
+.border-coxy-primary { border-color: hsl(var(--coxy-primary)); }
+.border-coxy-secondary { border-color: hsl(var(--coxy-secondary)); }
+.border-coxy-accent { border-color: hsl(var(--coxy-accent)); }
 ```
 
 ## 🎨 **Component-Specific Usage**
@@ -92,17 +92,17 @@ Additional utility classes are available:
 
 ```tsx
 // Primary Button
-<Button className="bg-iris-primary hover:bg-iris-primary/80 text-white">
+<Button className="bg-coxy-primary hover:bg-coxy-primary/80 text-white">
   Primary Action
 </Button>
 
 // Secondary Button
-<Button variant="outline" className="border-iris-primary text-iris-primary hover:bg-iris-primary/10">
+<Button variant="outline" className="border-coxy-primary text-coxy-primary hover:bg-coxy-primary/10">
   Secondary Action
 </Button>
 
 // Accent Button
-<Button className="bg-iris-accent hover:bg-iris-accent/80 text-white">
+<Button className="bg-coxy-accent hover:bg-coxy-accent/80 text-white">
   Special Action
 </Button>
 ```
@@ -111,16 +111,16 @@ Additional utility classes are available:
 
 ```tsx
 // Primary Card
-<Card className="bg-card border-iris-primary/20">
+<Card className="bg-card border-coxy-primary/20">
   <CardHeader>
-    <CardTitle className="text-iris-primary">Card Title</CardTitle>
+    <CardTitle className="text-coxy-primary">Card Title</CardTitle>
   </CardHeader>
 </Card>
 
 // Accent Card
-<Card className="bg-iris-light border-iris-accent/30">
+<Card className="bg-coxy-light border-coxy-accent/30">
   <CardContent>
-    <p className="text-iris-dark">Card content</p>
+    <p className="text-coxy-dark">Card content</p>
   </CardContent>
 </Card>
 ```
@@ -129,46 +129,46 @@ Additional utility classes are available:
 
 ```tsx
 // Main Headings
-<h1 className="text-iris-primary font-bold">Main Title</h1>
+<h1 className="text-coxy-primary font-bold">Main Title</h1>
 
 // Subheadings
-<h2 className="text-iris-secondary font-semibold">Subtitle</h2>
+<h2 className="text-coxy-secondary font-semibold">Subtitle</h2>
 
 // Accent Text
-<span className="text-iris-accent font-medium">Highlighted Text</span>
+<span className="text-coxy-accent font-medium">Highlighted Text</span>
 
 // Body Text
-<p className="text-iris-dark">Regular content text</p>
+<p className="text-coxy-dark">Regular content text</p>
 ```
 
 ### **Interactive Elements**
 
 ```tsx
 // Links
-<a className="text-iris-primary hover:text-iris-accent underline">
+<a className="text-coxy-primary hover:text-coxy-accent underline">
   Interactive Link
 </a>
 
 // Form Elements
-<input className="border-iris-primary/30 focus:border-iris-primary" />
+<input className="border-coxy-primary/30 focus:border-coxy-primary" />
 
 // Progress Indicators
-<div className="bg-iris-primary/20">
-  <div className="bg-iris-primary h-full w-1/2"></div>
+<div className="bg-coxy-primary/20">
+  <div className="bg-coxy-primary h-full w-1/2"></div>
 </div>
 ```
 
 ## 🌙 **Dark Mode Support**
 
-The iris color system automatically adapts to dark mode:
+The coxy color system automatically adapts to dark mode:
 
 ```css
 .dark {
-  --iris-primary: 270 85% 65%;        /* Same vibrant purple */
-  --iris-secondary: 240 100% 85%;     /* Same light blue */
-  --iris-accent: 300 75% 70%;         /* Same magenta */
-  --iris-light: 270 20% 15%;          /* Dark purple for backgrounds */
-  --iris-dark: 270 30% 90%;           /* Light purple for text */
+  --coxy-primary: 270 85% 65%;        /* Same vibrant purple */
+  --coxy-secondary: 240 100% 85%;     /* Same light blue */
+  --coxy-accent: 300 75% 70%;         /* Same magenta */
+  --coxy-light: 270 20% 15%;          /* Dark purple for backgrounds */
+  --coxy-dark: 270 30% 90%;           /* Light purple for text */
 }
 ```
 
@@ -176,18 +176,18 @@ The iris color system automatically adapts to dark mode:
 
 ### **✅ Do:**
 
-- Use `iris-primary` for main brand elements and CTAs
-- Use `iris-secondary` for secondary actions and accents
-- Use `iris-accent` for special highlights and important elements
-- Use `iris-light` for subtle backgrounds and soft elements
-- Use `iris-dark` for high-contrast text and important information
+- Use `coxy-primary` for main brand elements and CTAs
+- Use `coxy-secondary` for secondary actions and accents
+- Use `coxy-accent` for special highlights and important elements
+- Use `coxy-light` for subtle backgrounds and soft elements
+- Use `coxy-dark` for high-contrast text and important information
 - Combine colors thoughtfully for visual hierarchy
-- Use opacity variations (e.g., `iris-primary/20`) for subtle effects
+- Use opacity variations (e.g., `coxy-primary/20`) for subtle effects
 
 ### **❌ Don't:**
 
-- Mix iris colors with the old `#F8D12E` yellow color
-- Use too many different iris colors in one component
+- Mix coxy colors with the old `#F8D12E` yellow color
+- Use too many different coxy colors in one component
 - Use low contrast combinations (e.g., light text on light backgrounds)
 - Overuse the accent color - reserve it for special emphasis
 
@@ -197,31 +197,31 @@ The iris color system automatically adapts to dark mode:
 
 ```tsx
 // Primary + White (High Contrast)
-<div className="bg-iris-primary text-white">Primary + White</div>
+<div className="bg-coxy-primary text-white">Primary + White</div>
 
 // Primary + Light (Soft Contrast)
-<div className="bg-iris-primary text-iris-light">Primary + Light</div>
+<div className="bg-coxy-primary text-coxy-light">Primary + Light</div>
 
 // Secondary + Dark (Readable)
-<div className="bg-iris-secondary text-iris-dark">Secondary + Dark</div>
+<div className="bg-coxy-secondary text-coxy-dark">Secondary + Dark</div>
 
 // Accent + White (Bold)
-<div className="bg-iris-accent text-white">Accent + White</div>
+<div className="bg-coxy-accent text-white">Accent + White</div>
 
 // Light + Dark (Subtle)
-<div className="bg-iris-light text-iris-dark">Light + Dark</div>
+<div className="bg-coxy-light text-coxy-dark">Light + Dark</div>
 ```
 
 ### **Gradient Combinations:**
 
 ```tsx
 // Primary to Secondary Gradient
-<div className="bg-gradient-to-r from-iris-primary to-iris-secondary">
+<div className="bg-gradient-to-r from-coxy-primary to-coxy-secondary">
   Beautiful Gradient
 </div>
 
 // Primary to Accent Gradient
-<div className="bg-gradient-to-br from-iris-primary to-iris-accent">
+<div className="bg-gradient-to-br from-coxy-primary to-coxy-accent">
   Dynamic Gradient
 </div>
 ```
@@ -231,10 +231,10 @@ The iris color system automatically adapts to dark mode:
 ### **Navigation Bar:**
 
 ```tsx
-<nav className="bg-background border-b border-iris-primary/20">
+<nav className="bg-background border-b border-coxy-primary/20">
   <div className="flex items-center space-x-4">
     <img src="/coxy dora.png" alt="Logo" className="w-8 h-8" />
-    <span className="text-iris-primary font-bold">Iris</span>
+    <span className="text-coxy-primary font-bold">Coxy</span>
   </div>
 </nav>
 ```
@@ -242,14 +242,14 @@ The iris color system automatically adapts to dark mode:
 ### **Hero Section:**
 
 ```tsx
-<section className="bg-gradient-to-br from-iris-light to-background">
-  <h1 className="text-iris-primary text-4xl font-bold">
-    Welcome to Iris
+<section className="bg-gradient-to-br from-coxy-light to-background">
+  <h1 className="text-coxy-primary text-4xl font-bold">
+    Welcome to Coxy
   </h1>
-  <p className="text-iris-dark text-lg">
+  <p className="text-coxy-dark text-lg">
     The ultimate domain hunter
   </p>
-  <Button className="bg-iris-primary hover:bg-iris-primary/80">
+  <Button className="bg-coxy-primary hover:bg-coxy-primary/80">
     Get Started
   </Button>
 </section>
@@ -258,26 +258,26 @@ The iris color system automatically adapts to dark mode:
 ### **Data Cards:**
 
 ```tsx
-<Card className="bg-card border-iris-primary/20 hover:border-iris-primary/50">
+<Card className="bg-card border-coxy-primary/20 hover:border-coxy-primary/50">
   <CardHeader>
-    <CardTitle className="text-iris-primary">📊 Analytics</CardTitle>
+    <CardTitle className="text-coxy-primary">📊 Analytics</CardTitle>
   </CardHeader>
   <CardContent>
-    <div className="text-iris-accent text-2xl font-bold">1,234</div>
-    <p className="text-iris-dark text-sm">Total Users</p>
+    <div className="text-coxy-accent text-2xl font-bold">1,234</div>
+    <p className="text-coxy-dark text-sm">Total Users</p>
   </CardContent>
 </Card>
 ```
 
 ## 🎉 **Result**
 
-The new iris brand color system provides:
+The new Coxy brand color system provides:
 
-- **🌸 Natural Beauty**: Colors inspired by the elegant iris flower
+- **🌸 Natural Beauty**: Colors inspired by the elegant coxy brand
 - **🎯 Brand Consistency**: Unified color palette across all components
 - **🌙 Dark Mode Ready**: Automatic adaptation for dark themes
 - **♿ Accessibility**: High contrast ratios for readability
 - **🎨 Visual Hierarchy**: Clear distinction between different element types
 - **🚀 Modern Appeal**: Contemporary color choices that appeal to the crypto community
 
-The iris color system creates a distinctive, professional, and visually appealing brand identity that sets Iris apart in the domain space! 🌸✨
+The coxy color system creates a distinctive, professional, and visually appealing brand identity that sets Coxy apart in the domain space! 🌸✨

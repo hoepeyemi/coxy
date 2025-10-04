@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Iris platform now includes comprehensive Web3 domain monitoring capabilities, allowing users to track domain events, analyze market trends, and set up automated notifications for valuable domain opportunities.
+The Coxy platform now includes comprehensive Web3 domain monitoring capabilities, allowing users to track domain events, analyze market trends, and set up automated notifications for valuable domain opportunities.
 
 ## 🚀 Features
 
@@ -256,7 +256,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 
 ## 📄 License
 
-This domain monitoring integration is part of the Iris platform and follows the same licensing terms.
+This domain monitoring integration is part of the Coxy platform and follows the same licensing terms.
 
 
 

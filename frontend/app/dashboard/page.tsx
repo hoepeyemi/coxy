@@ -5,7 +5,7 @@ const DashboardClient = dynamic(() => import('./dashboard-client'), {
   loading: () => (
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Iris Dashboard</h1>
+        <h1 className="text-3xl font-bold">Coxy Dashboard</h1>
           <p className="text-muted-foreground">
           Real-time domain analytics and trend monitoring
           </p>

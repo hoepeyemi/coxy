@@ -57,7 +57,7 @@ export default function Layout({
             }}
           >
             <p className="sen text-sm sm:text-md font-bold">📊 Dashboard</p>
-            <div className="w-2 h-2 bg-iris-primary rounded-full animate-pulse ml-2"></div>
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse ml-2"></div>
           </Button>
 
           <Button
@@ -101,7 +101,7 @@ export default function Layout({
           <p className="sen text-sm sm:text-md font-bold">
             Live Dashboard
           </p>
-          <div className="w-2 h-2 bg-iris-primary rounded-full animate-pulse ml-2"></div>
+          <div className="w-2 h-2 bg-primary rounded-full animate-pulse ml-2"></div>
         </Button>
 
 

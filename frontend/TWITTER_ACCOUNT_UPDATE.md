@@ -1,8 +1,8 @@
-# 🐦 Twitter Account Update - Iris Internet
+# 🐦 Twitter Account Update - Coxy Internet
 
 ## 🎯 **Update Summary**
 
-Successfully updated all Twitter/X account references from the old `@TokenHunterZoro` account to the new `@iris_internet` account across the entire Iris application.
+Successfully updated all Twitter/X account references from the old `@TokenHunterZoro` account to the new `@Coxy_internet` account across the entire Coxy application.
 
 ## ✅ **Files Updated**
 
@@ -18,7 +18,7 @@ onClick={() => {
 
 // After:
 onClick={() => {
-  window.open("https://x.com/iris_internet", "_blank");
+  window.open("https://x.com/Coxy_internet", "_blank");
 }}
 ```
 
@@ -37,7 +37,7 @@ window.open(
 
 // After:
 window.open(
-  "https://x.com/iris_internet/status/1867331863993627085",
+  "https://x.com/Coxy_internet/status/1867331863993627085",
   "_blank"
 );
 ```
@@ -53,7 +53,7 @@ window.open(
 
 // After:
 <p className="text-xs font-medium text-muted-foreground">
-  @iris_internet
+  @Coxy_internet
 </p>
 ```
 
@@ -68,7 +68,7 @@ window.open(
 **Twitter** | https://x.com/TokenHunterZoro
 
 # After:
-**Twitter** | https://x.com/iris_internet
+**Twitter** | https://x.com/Coxy_internet
 ```
 
 **Location**: Line 93 - Social media links section
@@ -76,26 +76,26 @@ window.open(
 ## 🔍 **Verification**
 
 ### **All References Updated:**
-- ✅ **Navigation Button**: "Follow on" button now opens `@iris_internet`
-- ✅ **Tweet Cards**: Twitter handle displays `@iris_internet`
-- ✅ **Tweet Links**: Clicking tweets opens `@iris_internet` profile
-- ✅ **Documentation**: README links to `@iris_internet`
-- ✅ **Metadata**: Layout.tsx already had correct `@iris_internet` reference
+- ✅ **Navigation Button**: "Follow on" button now opens `@Coxy_internet`
+- ✅ **Tweet Cards**: Twitter handle displays `@Coxy_internet`
+- ✅ **Tweet Links**: Clicking tweets opens `@Coxy_internet` profile
+- ✅ **Documentation**: README links to `@Coxy_internet`
+- ✅ **Metadata**: Layout.tsx already had correct `@Coxy_internet` reference
 
 ### **No Remaining References:**
 - ✅ **Search Confirmed**: No remaining `TokenHunterZoro` references in frontend
-- ✅ **Consistency Check**: All Twitter links now point to `@iris_internet`
+- ✅ **Consistency Check**: All Twitter links now point to `@Coxy_internet`
 - ✅ **Linting Passed**: No errors introduced by the changes
 
 ## 🎨 **User Experience Impact**
 
 ### **Navigation Bar:**
-- **Desktop Users**: "Follow on" button (visible on lg+ screens) now opens Iris Internet Twitter
+- **Desktop Users**: "Follow on" button (visible on lg+ screens) now opens Coxy Internet Twitter
 - **Mobile Users**: Button hidden on mobile but will work correctly when visible
 - **Hover Effects**: Maintains all existing hover animations and styling
 
 ### **Tweet Display:**
-- **Brand Consistency**: All tweet cards now show `@iris_internet` handle
+- **Brand Consistency**: All tweet cards now show `@Coxy_internet` handle
 - **Click Functionality**: Clicking tweets opens the correct Twitter profile
 - **Visual Design**: No visual changes, only URL and handle updates
 
@@ -105,11 +105,11 @@ window.open(
 
 ## 🚀 **Result**
 
-The Iris application now consistently references the `@iris_internet` Twitter account across:
+The Coxy application now consistently references the `@Coxy_internet` Twitter account across:
 
 - **🔗 Navigation**: Follow button opens correct Twitter profile
 - **📱 Tweet Cards**: Display correct Twitter handle
 - **📖 Documentation**: README links to correct social media
-- **🎯 Brand Consistency**: All Twitter references aligned with Iris branding
+- **🎯 Brand Consistency**: All Twitter references aligned with Coxy branding
 
-Users clicking any Twitter-related links in the Iris application will now be directed to the official `@iris_internet` Twitter account! 🐦✨
+Users clicking any Twitter-related links in the Coxy application will now be directed to the official `@Coxy_internet` Twitter account! 🐦✨

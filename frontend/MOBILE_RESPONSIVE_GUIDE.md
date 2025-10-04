@@ -1,8 +1,8 @@
-# 📱 Mobile Responsive Design Guide - Iris
+# 📱 Mobile Responsive Design Guide - Coxy
 
 ## 🎯 **Overview**
 
-The Iris homepage has been fully optimized for mobile responsiveness across all device sizes. The design now provides an excellent user experience on smartphones, tablets, and desktop devices.
+The Coxy homepage has been fully optimized for mobile responsiveness across all device sizes. The design now provides an excellent user experience on smartphones, tablets, and desktop devices.
 
 ## 📐 **Responsive Breakpoints**
 
@@ -34,7 +34,7 @@ The application uses Tailwind CSS responsive breakpoints:
 
 ```tsx
 // Responsive typography and spacing
-<p className="meme-title tracking-widest font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-iris-primary mt-4 sm:mt-6 md:mt-12 lg:mt-16 px-4">
+<p className="meme-title tracking-widest font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary mt-4 sm:mt-6 md:mt-12 lg:mt-16 px-4">
   The Ultimate TikTok & Telegram Domain Hunter
 </p>
 ```
@@ -110,7 +110,7 @@ The application uses Tailwind CSS responsive breakpoints:
 #### **Text Content:**
 ```tsx
 <div className="lg:flex-1 flex flex-col lg:pb-8 xl:pb-12 flex-1 max-w-full lg:max-w-[70%] mx-auto px-4 sm:px-6 lg:px-0">
-  <p className="font-bold nouns tracking-widest text-xl sm:text-2xl md:text-3xl lg:text-4xl text-iris-primary mt-8 sm:mt-12 lg:mt-16 xl:mt-24 text-center lg:text-right">
+  <p className="font-bold nouns tracking-widest text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary mt-8 sm:mt-12 lg:mt-16 xl:mt-24 text-center lg:text-right">
     Track Viral Posts with <br className="hidden sm:block" />
     <span className="sm:hidden"> </span>Market Impact
   </p>
@@ -143,7 +143,7 @@ The application uses Tailwind CSS responsive breakpoints:
 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
   <Card className="bg-card/50 backdrop-blur-sm border-border/50">
     <CardContent className="p-3 sm:p-4 text-center">
-      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-iris-primary">{data.summary.totalChannels}</div>
+      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">{data.summary.totalChannels}</div>
       <div className="text-xs sm:text-sm text-muted-foreground">Total Channels</div>
     </CardContent>
   </Card>
@@ -187,7 +187,7 @@ The application uses Tailwind CSS responsive breakpoints:
   <Button
     variant="outline"
     size="sm"
-    className="flex-1 border-iris-primary/30 text-iris-primary h-9 sm:h-10"
+    className="flex-1 border-primary/30 text-primary h-9 sm:h-10"
   >
     <Activity className="h-4 w-4 mr-2" />
     <span className="hidden sm:inline">Refresh Status</span>
@@ -296,7 +296,7 @@ Test on these key breakpoints:
 
 ## 🚀 **Result**
 
-The Iris homepage now provides:
+The Coxy homepage now provides:
 
 - **📱 Excellent Mobile Experience**: Optimized for smartphones and tablets
 - **🖥️ Enhanced Desktop Experience**: Takes advantage of larger screens

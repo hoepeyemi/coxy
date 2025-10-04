@@ -75,13 +75,13 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        // Black & White Brand Colors
-        iris: {
-          primary: "hsl(var(--iris-primary))",
-          secondary: "hsl(var(--iris-secondary))",
-          accent: "hsl(var(--iris-accent))",
-          light: "hsl(var(--iris-light))",
-          dark: "hsl(var(--iris-dark))",
+        // Coxy Brand Colors
+        coxy: {
+          primary: "hsl(var(--coxy-primary))",
+          secondary: "hsl(var(--coxy-secondary))",
+          accent: "hsl(var(--coxy-accent))",
+          light: "hsl(var(--coxy-light))",
+          dark: "hsl(var(--coxy-dark))",
         },
       },
       borderRadius: {
