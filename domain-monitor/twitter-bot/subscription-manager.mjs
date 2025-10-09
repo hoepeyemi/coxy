@@ -26,10 +26,16 @@ class SubscriptionManager {
 
   async loadSubscriptions() {
     try {
-      const { data: subscriptions, error } = await supabase
-        .from('user_subscriptions')
-        .select('*')
-        .eq('is_active', true);
+      const { data: subscriptions, error } = await Promise.race([
+        supabase
+          .from('user_subscriptions')
+          .select('id, user_id, event_types, min_price, max_price, min_length, max_length, extensions, notifications, email, created_at, updated_at')
+          .eq('is_active', true)
+          .limit(100), // Limit to prevent timeout
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Subscription query timeout')), 10000)
+        )
+      ]);
 
       if (error) throw error;
 
@@ -47,7 +53,7 @@ class SubscriptionManager {
           },
           extensions: sub.extensions || [],
           notifications: sub.notifications || true,
-          webhookUrl: sub.webhook_url,
+          webhookUrl: sub.webhook_url || null, // Handle missing column gracefully
           email: sub.email,
           createdAt: sub.created_at,
           updatedAt: sub.updated_at
@@ -57,14 +63,22 @@ class SubscriptionManager {
       console.log(`✅ Loaded ${this.subscriptions.size} active subscriptions`);
     } catch (error) {
       console.error('Error loading subscriptions:', error);
+      // Continue without subscriptions if there's an error
+      this.subscriptions = new Map();
     }
   }
 
   async loadUserPreferences() {
     try {
-      const { data: preferences, error } = await supabase
-        .from('user_preferences')
-        .select('*');
+      const { data: preferences, error } = await Promise.race([
+        supabase
+          .from('user_preferences')
+          .select('user_id, language, timezone, notification_frequency, max_notifications_per_day, preferred_extensions, price_alerts, trend_alerts, expired_alerts, created_at, updated_at')
+          .limit(100), // Limit to prevent timeout
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('User preferences query timeout')), 10000)
+        )
+      ]);
 
       if (error) throw error;
 
@@ -86,6 +100,8 @@ class SubscriptionManager {
       console.log(`✅ Loaded ${this.userPreferences.size} user preferences`);
     } catch (error) {
       console.error('Error loading user preferences:', error);
+      // Continue without preferences if there's an error
+      this.userPreferences = new Map();
     }
   }
 

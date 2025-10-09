@@ -70,11 +70,21 @@ class CoxyOptimizedBot {
     console.log('📊 Following the optimized domain monitoring flow...\n');
     
     try {
-      // Initialize all components
-      await this.initializeComponents();
+      // Initialize all components with timeout
+      await Promise.race([
+        this.initializeComponents(),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Component initialization timeout')), 30000)
+        )
+      ]);
       
-      // Verify API connections
-      await this.verifyConnections();
+      // Verify API connections with timeout
+      await Promise.race([
+        this.verifyConnections(),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('API verification timeout')), 30000)
+        )
+      ]);
       
       // Start the bot
       this.startBot();
@@ -83,6 +93,15 @@ class CoxyOptimizedBot {
       
     } catch (error) {
       console.error('❌ Failed to initialize Coxy Optimized Bot:', error);
+      
+      // Try to start with minimal functionality
+      console.log('🔄 Attempting to start with minimal functionality...');
+      try {
+        this.startBot();
+        console.log('✅ Bot started with minimal functionality');
+      } catch (minimalError) {
+        console.error('❌ Failed to start even with minimal functionality:', minimalError);
+      }
     }
   }
 
@@ -99,22 +118,59 @@ class CoxyOptimizedBot {
   async verifyConnections() {
     console.log('🔗 Verifying API connections...');
     
-    // Test Twitter API
-    const user = await twitterClient.v2.me();
-    console.log(`✅ Twitter API connected as @${user.data.username}`);
+    try {
+      // Test Twitter API with timeout
+      const twitterPromise = twitterClient.v2.me();
+      const user = await Promise.race([
+        twitterPromise,
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Twitter API timeout')), 10000)
+        )
+      ]);
+      console.log(`✅ Twitter API connected as @${user.data.username}`);
+    } catch (error) {
+      console.error('❌ Twitter API connection failed:', error.message);
+      throw error;
+    }
     
-    // Test OpenAI API
-    await openai.models.list();
-    console.log('✅ OpenAI API connected');
+    try {
+      // Test OpenAI API with timeout
+      const openaiPromise = openai.models.list();
+      await Promise.race([
+        openaiPromise,
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('OpenAI API timeout')), 10000)
+        )
+      ]);
+      console.log('✅ OpenAI API connected');
+    } catch (error) {
+      console.error('❌ OpenAI API connection failed:', error.message);
+      throw error;
+    }
     
-    // Test Supabase API
-    const { data, error } = await supabase
-      .from('domain_events')
-      .select('count')
-      .limit(1);
-    
-    if (error) throw error;
-    console.log('✅ Supabase API connected');
+    try {
+      // Test Supabase API with timeout and optimized query
+      const supabasePromise = supabase
+        .from('domain_events')
+        .select('id')
+        .limit(1)
+        .single();
+      
+      const { data, error } = await Promise.race([
+        supabasePromise,
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Supabase API timeout')), 15000)
+        )
+      ]);
+      
+      if (error && error.code !== 'PGRST116') { // PGRST116 is "not found" which is OK
+        throw error;
+      }
+      console.log('✅ Supabase API connected');
+    } catch (error) {
+      console.error('❌ Supabase API connection failed:', error.message);
+      throw error;
+    }
   }
 
   startBot() {
@@ -497,11 +553,17 @@ Key guidelines:
       yesterday.setDate(yesterday.getDate() - 1);
       yesterday.setHours(0, 0, 0, 0);
       
-      const { data: events, error } = await supabase
-        .from('domain_events')
-        .select('*')
-        .gte('created_at', yesterday.toISOString())
-        .lt('created_at', new Date().toISOString());
+      const { data: events, error } = await Promise.race([
+        supabase
+          .from('domain_events')
+          .select('id, domain_name, event_type, price_usd, created_at')
+          .gte('created_at', yesterday.toISOString())
+          .lt('created_at', new Date().toISOString())
+          .limit(50), // Limit to prevent timeout
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Daily summary query timeout')), 15000)
+        )
+      ]);
 
       if (error || !events) {
         return "📊 Daily domain market update: Data processing... #DomainInvesting #Web3 #Coxy";
@@ -562,11 +624,17 @@ Key guidelines:
       const weekAgo = new Date();
       weekAgo.setDate(weekAgo.getDate() - 7);
       
-      const { data: events, error } = await supabase
-        .from('domain_events')
-        .select('*')
-        .gte('created_at', weekAgo.toISOString())
-        .order('created_at', { ascending: false });
+      const { data: events, error } = await Promise.race([
+        supabase
+          .from('domain_events')
+          .select('id, domain_name, event_type, price_usd, created_at')
+          .gte('created_at', weekAgo.toISOString())
+          .order('created_at', { ascending: false })
+          .limit(100), // Limit to prevent timeout
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Weekly analysis query timeout')), 20000)
+        )
+      ]);
 
       if (error || !events) {
         return "📊 Weekly domain market analysis: Data processing... #DomainInvesting #Web3 #Coxy";
